@@ -19,7 +19,7 @@ class FBAnnotationClusterView : MKAnnotationView {
         super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
         backgroundColor = UIColor.clearColor()
         setupLabel()
-        setCount(1)
+        setCount(100)
     }
 
     required override init(frame: CGRect) {
@@ -38,7 +38,7 @@ class FBAnnotationClusterView : MKAnnotationView {
             countLabel.autoresizingMask = .FlexibleWidth | .FlexibleHeight
             countLabel.textAlignment = .Center
             countLabel.backgroundColor = UIColor.clearColor()
-            countLabel.textColor = UIColor.blackColor()
+            countLabel.textColor = UIColor.whiteColor()
             countLabel.adjustsFontSizeToFitWidth = true
             countLabel.minimumScaleFactor = 2
             countLabel.numberOfLines = 1
