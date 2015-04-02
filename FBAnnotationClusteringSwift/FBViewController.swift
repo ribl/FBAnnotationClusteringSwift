@@ -27,7 +27,6 @@ class FBViewController: UIViewController {
 
         mapView.centerCoordinate = CLLocationCoordinate2DMake(0, 0);
         
-
         
     }
 
@@ -63,13 +62,13 @@ extension FBViewController : MKMapViewDelegate {
     
     func mapView(mapView: MKMapView!, regionDidChangeAnimated animated: Bool){
         
-        dispatch_async(dispatch_get_main_queue()) {
+        NSOperationQueue().addOperationWithBlock({
         
             let annotationArray = self.clusteringManager.clusteredAnnotationsWithinMapRect(self.mapView.visibleMapRect, withZoomScale:1.0)
             
             self.clusteringManager.displayAnnotations(annotationArray, onMapView:self.mapView)
 
-        }
+        })
 
     }
     
