@@ -33,13 +33,19 @@ class FBQuadTreeNode : NSObject {
     
     // MARK: - Bounding box functions
     
-    func FBBoundingBoxMake(x0:CGFloat, y0:CGFloat, xf:CGFloat, yf:CGFloat) -> FBBoundingBox{
+    class func FBBoundingBoxMake(x0:CGFloat, y0:CGFloat, xf:CGFloat, yf:CGFloat) -> FBBoundingBox{
 
         let box = FBBoundingBox(x0: x0, y0: y0, xf: xf, yf: yf)
         return box;
     }
     
-    func FBBoundingBoxForMapRect(mapRect: MKMapRect) -> FBBoundingBox {
+    class func FBBoundingBoxContainsCoordinate(box:FBBoundingBox, coordinate:CLLocationCoordinate2D) -> Bool {
+        let containsX:Bool = (box.x0 <= CGFloat(coordinate.latitude)) && (CGFloat(coordinate.latitude) <= box.xf)
+        let containsY:Bool = (box.y0 <= CGFloat(coordinate.longitude)) && (CGFloat(coordinate.longitude) <= box.yf)
+        return (containsX && containsY)
+    }
+    
+    class func FBBoundingBoxForMapRect(mapRect: MKMapRect) -> FBBoundingBox {
         let topLeft: CLLocationCoordinate2D = MKCoordinateForMapPoint(mapRect.origin)
         let botRight: CLLocationCoordinate2D = MKCoordinateForMapPoint(MKMapPointMake(MKMapRectGetMaxX(mapRect), MKMapRectGetMaxY(mapRect)))
         
@@ -49,7 +55,7 @@ class FBQuadTreeNode : NSObject {
         let minLon: CLLocationDegrees = topLeft.longitude
         let maxLon: CLLocationDegrees = botRight.longitude
         
-        return FBBoundingBoxMake(CGFloat(minLat), y0: CGFloat(minLon), xf: CGFloat(maxLat), yf: CGFloat(maxLon))
+        return FBQuadTreeNode.FBBoundingBoxMake(CGFloat(minLat), y0: CGFloat(minLon), xf: CGFloat(maxLat), yf: CGFloat(maxLon))
     }
     
     func isLeaf() -> Bool {
@@ -69,10 +75,10 @@ class FBQuadTreeNode : NSObject {
         let yMid:CGFloat = (box.yf + box.y0) / 2.0
 
         
-        northEast!.boundingBox = FBBoundingBoxMake(xMid, y0:box.y0, xf:box.xf, yf:yMid)
-        northWest!.boundingBox = FBBoundingBoxMake(box.x0, y0:box.y0, xf:xMid, yf:yMid)
-        southEast!.boundingBox = FBBoundingBoxMake(xMid, y0:yMid, xf:box.xf, yf:box.yf)
-        southWest!.boundingBox = FBBoundingBoxMake(box.x0, y0:yMid, xf:xMid, yf:box.yf)
+        northEast!.boundingBox = FBQuadTreeNode.FBBoundingBoxMake(xMid, y0:box.y0, xf:box.xf, yf:yMid)
+        northWest!.boundingBox = FBQuadTreeNode.FBBoundingBoxMake(box.x0, y0:box.y0, xf:xMid, yf:yMid)
+        southEast!.boundingBox = FBQuadTreeNode.FBBoundingBoxMake(xMid, y0:yMid, xf:box.xf, yf:box.yf)
+        southWest!.boundingBox = FBQuadTreeNode.FBBoundingBoxMake(box.x0, y0:yMid, xf:xMid, yf:box.yf)
     }
     
 }

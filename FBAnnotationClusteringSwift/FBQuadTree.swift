@@ -18,7 +18,7 @@ class FBQuadTree : NSObject {
     override init (){
         super.init()
 
-        //rootNode = FBQuadTreeNode(initWithBoundingBox:FBBoundingBoxForMapRect(MKMapRectWorld))
+        rootNode = FBQuadTreeNode(boundingBox:FBQuadTreeNode.FBBoundingBoxForMapRect(MKMapRectWorld))
         
     }
     
@@ -28,9 +28,9 @@ class FBQuadTree : NSObject {
     
     func insertAnnotation(annotation:MKAnnotation, toNode node:FBQuadTreeNode) -> Bool {
         
-        //if !FBBoundingBoxContainsCoordinate(node.boundingBox, annotation.coordinate) {
-          //  return false
-        //}
+        if !FBQuadTreeNode.FBBoundingBoxContainsCoordinate(node.boundingBox!, coordinate: annotation.coordinate) {
+            return false
+        }
         
         if node.count < nodeCapacity {
             node.annotations[node.count++] = annotation;
