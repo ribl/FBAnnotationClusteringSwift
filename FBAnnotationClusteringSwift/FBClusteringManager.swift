@@ -13,11 +13,23 @@ protocol FBClusteringManagerDelegate {
     
 }
 
-class FBClusteringManager {
+class FBClusteringManager : NSObject {
     
     var delegate:FBClusteringManagerDelegate? = nil
     
     var tree:FBQuadTree? = nil
+    
+    var lock:NSRecursiveLock = NSRecursiveLock()
+    
+        
+    override init(){
+        super.init()
+    }
+    
+    init(annotations: [MKAnnotation]){
+        super.init()
+        addAnnotations(annotations)
+    }
     
     func setAnnotations(annotations:[MKAnnotation]){
         tree = nil
@@ -28,10 +40,15 @@ class FBClusteringManager {
         if tree == nil {
             tree = FBQuadTree()
         }
+        
+        lock.lock()
         for annotation in annotations {
             tree!.insertAnnotation(annotation)
         }
+        lock.unlock()
     }
+    
+    
     
     class func FBZoomScaleToZoomLevel(scale:MKZoomScale) -> Int{
         let totalTilesAtMaxZoom:Double = MKMapSizeWorld.width / 256.0
