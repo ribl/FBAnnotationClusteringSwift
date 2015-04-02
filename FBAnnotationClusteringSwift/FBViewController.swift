@@ -78,4 +78,30 @@ extension FBViewController : MKMapViewDelegate {
 
     }
     
+    func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
+        
+        let reuseId = "AnnotationViewReuseID"
+        
+        var annotationView = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseId) as? MKPinAnnotationView
+        
+        if annotationView == nil {
+            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+        }
+        
+        // This is how you can check if annotation is a cluster
+        if annotation.isKindOfClass(FBAnnotationCluster) {
+            let cluster = annotation as FBAnnotationCluster
+            cluster.title = "\(cluster.annotations.count)"
+            
+            annotationView!.pinColor = .Green
+            annotationView!.canShowCallout = true
+        } else {
+            annotationView!.pinColor = .Red
+            annotationView!.canShowCallout = false
+        }
+        
+        return annotationView;
+        
+    }
+    
 }
