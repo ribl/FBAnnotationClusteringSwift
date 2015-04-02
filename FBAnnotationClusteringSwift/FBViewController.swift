@@ -20,9 +20,9 @@ class FBViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        var array:[FBAnnotation] = randomLocationsWithCount(numberOfLocations)
+        var array:[MKAnnotation] = randomLocationsWithCount(numberOfLocations)
         
-        //        self.clusteringManager = [[FBClusteringManager alloc] initWithAnnotations:array];
+        clusteringManager.addAnnotations(array)
         clusteringManager.delegate = self;
 
         mapView.centerCoordinate = CLLocationCoordinate2DMake(0, 0);
