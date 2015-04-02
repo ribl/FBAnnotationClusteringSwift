@@ -64,7 +64,13 @@ extension FBViewController : MKMapViewDelegate {
         
         NSOperationQueue().addOperationWithBlock({
         
-            let annotationArray = self.clusteringManager.clusteredAnnotationsWithinMapRect(self.mapView.visibleMapRect, withZoomScale:1.0)
+            let mapBoundsWidth = Double(self.mapView.bounds.size.width)
+            
+            let mapRectWidth:Double = self.mapView.visibleMapRect.size.width
+            
+            let scale:Double = mapBoundsWidth / mapRectWidth
+            
+            let annotationArray = self.clusteringManager.clusteredAnnotationsWithinMapRect(self.mapView.visibleMapRect, withZoomScale:scale)
             
             self.clusteringManager.displayAnnotations(annotationArray, onMapView:self.mapView)
 

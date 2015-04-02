@@ -144,15 +144,23 @@ class FBClusteringManager : NSObject {
     }
     
     class func FBZoomScaleToZoomLevel(scale:MKZoomScale) -> Int{
+        println("scale:: \(scale)")
+        
         let totalTilesAtMaxZoom:Double = MKMapSizeWorld.width / 256.0
+        println("totalTilesAtMaxZoom:: \(totalTilesAtMaxZoom)")
 
         let zoomLevelAtMaxZoom:Int = Int(log2(totalTilesAtMaxZoom))
-        
+        println("zoomLevelAtMaxZoom:: \(zoomLevelAtMaxZoom)")
+
         let floorLog2ScaleFloat = floor(log2f(Float(scale))) + 0.5
+        println("floorLog2ScaleFloat:: \(floorLog2ScaleFloat)")
+
+        let sum:Int = zoomLevelAtMaxZoom + Int(floorLog2ScaleFloat)
         
-        let zoomLevel:Int = zoomLevelAtMaxZoom + Int(floorLog2ScaleFloat)
+        let zoomLevel:Int = max(0, sum)
         
         return zoomLevel;
+
 
     }
     
