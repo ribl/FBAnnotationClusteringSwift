@@ -33,5 +33,17 @@ class FBClusteringManager {
         }
     }
     
+    class func FBZoomScaleToZoomLevel(scale:MKZoomScale) -> Int{
+        let totalTilesAtMaxZoom:Double = MKMapSizeWorld.width / 256.0
+
+        let zoomLevelAtMaxZoom:Int = Int(log2(totalTilesAtMaxZoom))
+        
+        let floorLog2ScaleFloat = floor(log2f(Float(scale))) + 0.5
+        
+        let zoomLevel:Int = zoomLevelAtMaxZoom + Int(floorLog2ScaleFloat)
+        
+        return zoomLevel;
+
+    }
     
 }
