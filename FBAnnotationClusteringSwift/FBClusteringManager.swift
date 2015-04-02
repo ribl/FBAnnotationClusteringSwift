@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import MapKit
 
 protocol FBClusteringManagerDelegate {
     
@@ -18,17 +19,17 @@ class FBClusteringManager {
     
     var tree:FBQuadTree? = nil
     
-    func setAnnotations(annotations:[FBAnnotation]){
+    func setAnnotations(annotations:[MKAnnotation]){
         tree = nil
         addAnnotations(annotations)
     }
     
-    func addAnnotations(annotations:[FBAnnotation]){
+    func addAnnotations(annotations:[MKAnnotation]){
         if tree == nil {
             tree = FBQuadTree()
         }
         for annotation in annotations {
-            tree.insertAnnotation(annotation)
+            tree!.insertAnnotation(annotation)
         }
     }
     

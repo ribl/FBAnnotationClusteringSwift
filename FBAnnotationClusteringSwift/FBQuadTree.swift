@@ -38,7 +38,7 @@ class FBQuadTree : NSObject {
         }
         
         if node.isLeaf() {
-            //node.subdivide()
+            node.subdivide()
         }
         
         if insertAnnotation(annotation, toNode:node.northEast!) {

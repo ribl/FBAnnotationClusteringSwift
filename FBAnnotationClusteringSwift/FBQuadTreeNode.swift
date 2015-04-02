@@ -22,6 +22,10 @@ class FBQuadTreeNode : NSObject {
     
     var annotations:[MKAnnotation] = []
     
+    override init(){
+        super.init()
+    }
+    
     init(boundingBox box:FBBoundingBox){
         super.init()
         boundingBox = box
@@ -29,13 +33,13 @@ class FBQuadTreeNode : NSObject {
     
     // MARK: - Bounding box functions
     
-    class func FBBoundingBoxMake(x0:CGFloat, y0:CGFloat, xf:CGFloat, yf:CGFloat) -> FBBoundingBox{
+    func FBBoundingBoxMake(x0:CGFloat, y0:CGFloat, xf:CGFloat, yf:CGFloat) -> FBBoundingBox{
 
         let box = FBBoundingBox(x0: x0, y0: y0, xf: xf, yf: yf)
         return box;
     }
     
-    class func FBBoundingBoxForMapRect(mapRect: MKMapRect) -> FBBoundingBox {
+    func FBBoundingBoxForMapRect(mapRect: MKMapRect) -> FBBoundingBox {
         let topLeft: CLLocationCoordinate2D = MKCoordinateForMapPoint(mapRect.origin)
         let botRight: CLLocationCoordinate2D = MKCoordinateForMapPoint(MKMapPointMake(MKMapRectGetMaxX(mapRect), MKMapRectGetMaxY(mapRect)))
         
@@ -50,6 +54,25 @@ class FBQuadTreeNode : NSObject {
     
     func isLeaf() -> Bool {
         return (northEast == nil) ? true : false
+    }
+    
+    func subdivide(){
+        
+        northEast = FBQuadTreeNode()
+        northWest = FBQuadTreeNode()
+        southEast = FBQuadTreeNode()
+        southWest = FBQuadTreeNode()
+        
+        let box = boundingBox!
+
+        let xMid:CGFloat = (box.xf + box.x0) / 2.0
+        let yMid:CGFloat = (box.yf + box.y0) / 2.0
+
+        
+        northEast!.boundingBox = FBBoundingBoxMake(xMid, y0:box.y0, xf:box.xf, yf:yMid)
+        northWest!.boundingBox = FBBoundingBoxMake(box.x0, y0:box.y0, xf:xMid, yf:yMid)
+        southEast!.boundingBox = FBBoundingBoxMake(xMid, y0:yMid, xf:box.xf, yf:box.yf)
+        southWest!.boundingBox = FBBoundingBoxMake(box.x0, y0:yMid, xf:xMid, yf:box.yf)
     }
     
 }
