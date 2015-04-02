@@ -46,4 +46,30 @@ class FBClusteringManager {
 
     }
     
+    class func FBCellSizeForZoomScale(zoomScale:MKZoomScale) -> CGFloat {
+        
+        let zoomLevel:Int = FBClusteringManager.FBZoomScaleToZoomLevel(zoomScale)
+        
+        switch (zoomLevel) {
+        case 13:
+            return 64
+        case 14:
+            return 64
+        case 15:
+            return 64
+        case 16:
+            return 32
+        case 17:
+            return 32
+        case 18:
+            return 32
+        case 19:
+            return 16
+            
+        default:
+            return 88
+        }
+        
+    }
+    
 }
