@@ -90,6 +90,7 @@ extension FBViewController : MKMapViewDelegate {
                 clusterView = FBAnnotationClusterView(annotation: annotation, reuseIdentifier: reuseId)
             }
             
+            
             println("annotation:: \(annotation.title)")
 
             return clusterView

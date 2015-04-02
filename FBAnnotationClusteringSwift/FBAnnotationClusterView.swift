@@ -42,7 +42,7 @@ class FBAnnotationClusterView : MKAnnotationView {
             countLabel.adjustsFontSizeToFitWidth = true
             countLabel.minimumScaleFactor = 2
             countLabel.numberOfLines = 1
-            countLabel.font = UIFont.boldSystemFontOfSize(12)
+            countLabel.font = UIFont.boldSystemFontOfSize(13)
             countLabel.baselineAdjustment = .AlignCenters
             addSubview(countLabel)
         }
@@ -59,7 +59,7 @@ class FBAnnotationClusterView : MKAnnotationView {
     override func layoutSubviews() {
         
         // Images are faster than using drawRect:
-        var imageAsset = UIImage(named: "cluster")!
+        var imageAsset = UIImage(named: "clusterMedium")!
         
         countLabel?.frame = self.bounds
         image = imageAsset
