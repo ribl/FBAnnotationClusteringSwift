@@ -83,7 +83,7 @@ extension FBViewController : MKMapViewDelegate {
         var reuseId = ""
         
         if annotation.isKindOfClass(FBAnnotationCluster) {
-        
+            
             reuseId = "Cluster"
             var clusterView = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseId)
             if clusterView == nil {
@@ -91,7 +91,6 @@ extension FBViewController : MKMapViewDelegate {
             }
             
             
-            println("annotation:: \(annotation.title)")
 
             return clusterView
             
