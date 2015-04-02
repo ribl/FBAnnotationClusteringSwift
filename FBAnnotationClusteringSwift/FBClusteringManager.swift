@@ -136,9 +136,19 @@ class FBClusteringManager : NSObject {
     
     func displayAnnotations(annotations: [MKAnnotation], onMapView mapView:MKMapView){
         
-
+        var before = NSMutableSet(array: mapView.annotations)
+        before.removeObject(mapView.userLocation)
+        var after = NSSet(array: annotations)
+        var toKeep = NSMutableSet(set: before)
+        toKeep.intersectSet(after)
+        var toAdd = NSMutableSet(set: after)
+        toAdd.minusSet(toKeep)
+        var toRemove = NSMutableSet(set: before)
+        toRemove.minusSet(after)
+        
         dispatch_async(dispatch_get_main_queue())  {
-            mapView.addAnnotations(annotations)
+            mapView.addAnnotations(toAdd.allObjects)
+            mapView.removeAnnotations(toRemove.allObjects)
         }
         
     }
