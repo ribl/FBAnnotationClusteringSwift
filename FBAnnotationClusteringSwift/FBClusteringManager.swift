@@ -16,4 +16,21 @@ class FBClusteringManager {
     
     var delegate:FBClusteringManagerDelegate? = nil
     
+    var tree:FBQuadTree? = nil
+    
+    func setAnnotations(annotations:[FBAnnotation]){
+        tree = nil
+        addAnnotations(annotations)
+    }
+    
+    func addAnnotations(annotations:[FBAnnotation]){
+        if tree == nil {
+            tree = FBQuadTree()
+        }
+        for annotation in annotations {
+            tree.insertAnnotation(annotation)
+        }
+    }
+    
+    
 }
