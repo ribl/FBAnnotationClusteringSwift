@@ -92,11 +92,11 @@ extension FBViewController : MKMapViewDelegate {
         if annotation.isKindOfClass(FBAnnotationCluster) {
             let cluster = annotation as FBAnnotationCluster
             cluster.title = "\(cluster.annotations.count)"
-            
-            annotationView!.pinColor = .Green
+
+            annotationView!.image = UIImage(named: "cluster")
             annotationView!.canShowCallout = true
         } else {
-            annotationView!.pinColor = .Red
+            annotationView!.pinColor = .Green
             annotationView!.canShowCallout = false
         }
         
