@@ -11,6 +11,8 @@ import MapKit
 
 protocol FBClusteringManagerDelegate {
     
+    func cellSizeFactorForCoordinator(coordinator:FBClusteringManager) -> CGFloat
+    
 }
 
 class FBClusteringManager : NSObject {
@@ -48,7 +50,98 @@ class FBClusteringManager : NSObject {
         lock.unlock()
     }
     
+    func clusteredAnnotationsWithinMapRect(rect:MKMapRect, withZoomScale zoomScale:Double) -> [MKAnnotation]{
+        
+        
+        let cellSize:CGFloat = FBClusteringManager.FBCellSizeForZoomScale(MKZoomScale(zoomScale))
+        
+//        if delegate?.respondsToSelector("cellSizeFactorForCoordinator:") {
+//            cellSize *= delegate.cellSizeFactorForCoordinator(self)
+//        }
+        
+        let scaleFactor:Double = zoomScale / Double(cellSize)
+        
+        let minX:Int = Int(floor(MKMapRectGetMinX(rect) * scaleFactor))
+        let maxX:Int = Int(floor(MKMapRectGetMaxX(rect) * scaleFactor))
+        let minY:Int = Int(floor(MKMapRectGetMinY(rect) * scaleFactor))
+        let maxY:Int = Int(floor(MKMapRectGetMaxY(rect) * scaleFactor))
+
+        var clusteredAnnotations = [MKAnnotation]()
+
+        lock.lock()
+
+        for i in minX...maxX {
+
+            for j in minY...maxY {
+
+                let mapPoint = MKMapPoint(x: Double(i)/scaleFactor, y: Double(j)/scaleFactor)
+                
+                let mapSize = MKMapSize(width: 1.0/scaleFactor, height: 1.0/scaleFactor)
+                
+                let mapRect = MKMapRect(origin: mapPoint, size: mapSize)
+                let mapBox:FBBoundingBox  = FBQuadTreeNode.FBBoundingBoxForMapRect(mapRect)
+                
+                var totalLatitude:Double = 0
+                var totalLongitude:Double = 0
+                
+                var annotations = [MKAnnotation]()
+                
+                tree!.enumerateAnnotationsInBox(mapBox){ obj in
+                    totalLatitude += obj.coordinate.latitude
+                    totalLongitude += obj.coordinate.longitude
+                    annotations.append(obj)
+                }
+                
+                let count = annotations.count
+                
+                if count == 1 {
+                    clusteredAnnotations += annotations
+                }
+                
+                if count > 1 {
+                    let coordinate = CLLocationCoordinate2D(
+                        latitude: CLLocationDegrees(totalLatitude)/CLLocationDegrees(count),
+                        longitude: CLLocationDegrees(totalLongitude)/CLLocationDegrees(count)
+                    )
+                    var cluster = FBAnnotationCluster()
+                    cluster.coordinate = coordinate
+                    cluster.annotations = annotations
+                    clusteredAnnotations.append(cluster)
+                }
+
+                
+                
+            }
+           
+        }
+        
     
+        lock.unlock()
+        
+        return clusteredAnnotations
+    }
+    
+    func allAnnotations() -> [MKAnnotation] {
+        
+        var annotations = [MKAnnotation]()
+        
+        lock.lock()
+        tree?.enumerateAnnotationsUsingBlock(){ obj in
+            annotations.append(obj)
+        }
+        lock.unlock()
+        
+        return annotations
+    }
+    
+    func displayAnnotations(annotations: [MKAnnotation], onMapView mapView:MKMapView){
+        
+
+        dispatch_async(dispatch_get_main_queue())  {
+            mapView.addAnnotations(annotations)
+        }
+        
+    }
     
     class func FBZoomScaleToZoomLevel(scale:MKZoomScale) -> Int{
         let totalTilesAtMaxZoom:Double = MKMapSizeWorld.width / 256.0

@@ -51,6 +51,10 @@ class FBViewController: UIViewController {
 }
 
 extension FBViewController : FBClusteringManagerDelegate {
+ 
+    func cellSizeFactorForCoordinator(coordinator:FBClusteringManager) -> CGFloat{
+        return 1.0
+    }
     
 }
 
