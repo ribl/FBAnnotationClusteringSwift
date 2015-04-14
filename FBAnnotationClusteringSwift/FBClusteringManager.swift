@@ -83,7 +83,6 @@ class FBClusteringManager : NSObject {
                 
                 var totalLatitude:Double = 0
                 var totalLongitude:Double = 0
-                
                 var annotations = [MKAnnotation]()
                 
                 tree?.enumerateAnnotationsInBox(mapBox){ obj in
@@ -107,11 +106,10 @@ class FBClusteringManager : NSObject {
                     cluster.coordinate = coordinate
                     cluster.annotations = annotations
                     
-                    println("cluster.annotations.count:: \(cluster.annotations.count)")
+//                    println("cluster.annotations.count:: \(cluster.annotations.count)")
                     
                     clusteredAnnotations.append(cluster)
                 }
-                
                 
                 
             }
@@ -120,6 +118,16 @@ class FBClusteringManager : NSObject {
         
         
         lock.unlock()
+        println("")
+        println("")
+        println("")
+        println("")
+        
+        for (index, cluster) in enumerate(clusteredAnnotations) {
+            let fbCluster = cluster as FBAnnotationCluster
+            println("index:: \(index) clusteredAnnotations.count:: \(fbCluster.annotations.count) coord:: \(cluster.coordinate.latitude), \(cluster.coordinate.longitude)")
+            
+        }
         
         return clusteredAnnotations
     }
