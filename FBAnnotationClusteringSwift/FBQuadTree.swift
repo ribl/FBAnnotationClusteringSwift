@@ -17,7 +17,7 @@ class FBQuadTree : NSObject {
     
     override init (){
         super.init()
-
+        
         rootNode = FBQuadTreeNode(boundingBox:FBQuadTreeNode.FBBoundingBoxForMapRect(MKMapRectWorld))
         
     }
@@ -91,7 +91,7 @@ class FBQuadTree : NSObject {
         enumerateAnnotationsInBox(box, withNode: node.northWest!, callback: callback)
         enumerateAnnotationsInBox(box, withNode: node.southEast!, callback: callback)
         enumerateAnnotationsInBox(box, withNode: node.southWest!, callback: callback)
-    
+        
     }
-
+    
 }
