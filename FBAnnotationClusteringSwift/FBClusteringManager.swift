@@ -23,7 +23,7 @@ class FBClusteringManager : NSObject {
     
     var lock:NSRecursiveLock = NSRecursiveLock()
     
-        
+    
     override init(){
         super.init()
     }
@@ -55,9 +55,9 @@ class FBClusteringManager : NSObject {
         
         let cellSize:CGFloat = FBClusteringManager.FBCellSizeForZoomScale(MKZoomScale(zoomScale))
         
-//        if delegate?.respondsToSelector("cellSizeFactorForCoordinator:") {
-//            cellSize *= delegate.cellSizeFactorForCoordinator(self)
-//        }
+        //        if delegate?.respondsToSelector("cellSizeFactorForCoordinator:") {
+        //            cellSize *= delegate.cellSizeFactorForCoordinator(self)
+        //        }
         
         let scaleFactor:Double = zoomScale / Double(cellSize)
         
@@ -65,15 +65,15 @@ class FBClusteringManager : NSObject {
         let maxX:Int = Int(floor(MKMapRectGetMaxX(rect) * scaleFactor))
         let minY:Int = Int(floor(MKMapRectGetMinY(rect) * scaleFactor))
         let maxY:Int = Int(floor(MKMapRectGetMaxY(rect) * scaleFactor))
-
+        
         var clusteredAnnotations = [MKAnnotation]()
-
+        
         lock.lock()
-
+        
         for i in minX...maxX {
-
+            
             for j in minY...maxY {
-
+                
                 let mapPoint = MKMapPoint(x: Double(i)/scaleFactor, y: Double(j)/scaleFactor)
                 
                 let mapSize = MKMapSize(width: 1.0/scaleFactor, height: 1.0/scaleFactor)
@@ -86,7 +86,7 @@ class FBClusteringManager : NSObject {
                 
                 var annotations = [MKAnnotation]()
                 
-                tree!.enumerateAnnotationsInBox(mapBox){ obj in
+                tree?.enumerateAnnotationsInBox(mapBox){ obj in
                     totalLatitude += obj.coordinate.latitude
                     totalLongitude += obj.coordinate.longitude
                     annotations.append(obj)
@@ -106,16 +106,19 @@ class FBClusteringManager : NSObject {
                     var cluster = FBAnnotationCluster()
                     cluster.coordinate = coordinate
                     cluster.annotations = annotations
+                    
+                    println("cluster.annotations.count:: \(cluster.annotations.count)")
+                    
                     clusteredAnnotations.append(cluster)
                 }
-
+                
                 
                 
             }
-           
+            
         }
         
-    
+        
         lock.unlock()
         
         return clusteredAnnotations
@@ -158,20 +161,20 @@ class FBClusteringManager : NSObject {
         
         let totalTilesAtMaxZoom:Double = MKMapSizeWorld.width / 256.0
         println("totalTilesAtMaxZoom:: \(totalTilesAtMaxZoom)")
-
+        
         let zoomLevelAtMaxZoom:Int = Int(log2(totalTilesAtMaxZoom))
         println("zoomLevelAtMaxZoom:: \(zoomLevelAtMaxZoom)")
-
+        
         let floorLog2ScaleFloat = floor(log2f(Float(scale))) + 0.5
         println("floorLog2ScaleFloat:: \(floorLog2ScaleFloat)")
-
+        
         let sum:Int = zoomLevelAtMaxZoom + Int(floorLog2ScaleFloat)
         
         let zoomLevel:Int = max(0, sum)
         
         return zoomLevel;
-
-
+        
+        
     }
     
     class func FBCellSizeForZoomScale(zoomScale:MKZoomScale) -> CGFloat {
