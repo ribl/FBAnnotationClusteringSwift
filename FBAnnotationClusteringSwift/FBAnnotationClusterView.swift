@@ -13,15 +13,13 @@ class FBAnnotationClusterView : MKAnnotationView {
     
     var count = 0
     
-    enum Size {
-        case Small
-        case Medium
-        case Large
-    }
+    var fontSize:CGFloat = 12
+    
+    var imageName = "clusterSmall"
+    
+    var borderWidth:CGFloat = 3
     
     var countLabel:UILabel? = nil
-    
-    var size:Size = .Small
     
     override init!(annotation: MKAnnotation!, reuseIdentifier: String!){
         super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
@@ -29,23 +27,33 @@ class FBAnnotationClusterView : MKAnnotationView {
         let cluster:FBAnnotationCluster = annotation as FBAnnotationCluster
         count = cluster.annotations.count
         
+        // change the size of the cluster image based on number of stories
         switch count {
         case 0...5:
-            size = .Small
+            fontSize = 12
+            imageName = "clusterSmall"
+            borderWidth = 3
+            
         case 6...15:
-            size = .Medium
+            fontSize = 13
+            imageName = "clusterMedium"
+            borderWidth = 4
+            
         default:
-            size = .Large
+            fontSize = 14
+            imageName = "clusterLarge"
+            borderWidth = 5
+            
         }
         
         backgroundColor = UIColor.clearColor()
         setupLabel()
         setCount(count)
     }
-
+    
     required override init(frame: CGRect) {
         super.init(frame: frame)
-
+        
     }
     
     required init(coder aDecoder: NSCoder) {
@@ -54,17 +62,6 @@ class FBAnnotationClusterView : MKAnnotationView {
     
     func setupLabel(){
         countLabel = UILabel(frame: bounds)
-        
-        var fontSize:CGFloat = 12
-        
-        switch size {
-        case .Small:
-            fontSize = 12
-        case .Medium:
-            fontSize = 13
-        default:
-            fontSize = 14
-        }
         
         if let countLabel = countLabel {
             countLabel.autoresizingMask = .FlexibleWidth | .FlexibleHeight
@@ -90,23 +87,17 @@ class FBAnnotationClusterView : MKAnnotationView {
     
     override func layoutSubviews() {
         
-        var imageName = "cluster"
-        
-        switch size {
-        case .Small:
-            imageName += "Small"
-        case .Medium:
-            imageName += "Medium"
-        default:
-            imageName += "Large"
-        }
-        
         // Images are faster than using drawRect:
         var imageAsset = UIImage(named: imageName)!
         
         countLabel?.frame = self.bounds
         image = imageAsset
         centerOffset = CGPointZero
+        
+        // adds a white border around the green circle
+        layer.borderColor = UIColor.whiteColor().CGColor
+        layer.borderWidth = borderWidth
+        layer.cornerRadius = self.bounds.size.width / 2
         
     }
     
