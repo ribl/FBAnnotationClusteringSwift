@@ -23,7 +23,7 @@ class FBQuadTreeNode : NSObject {
     var annotations:[MKAnnotation] = []
     
     // MARK: - Initializers
-
+    
     override init(){
         super.init()
     }
@@ -61,7 +61,7 @@ class FBQuadTreeNode : NSObject {
     // MARK: - Class functions
     
     class func FBBoundingBoxMake(x0:CGFloat, y0:CGFloat, xf:CGFloat, yf:CGFloat) -> FBBoundingBox{
-
+        
         let box = FBBoundingBox(x0: x0, y0: y0, xf: xf, yf: yf)
         return box;
     }
@@ -92,7 +92,7 @@ class FBQuadTreeNode : NSObject {
     class func FBMapRectForBoundingBox(boundingBox:FBBoundingBox) -> MKMapRect {
         let topLeft:MKMapPoint  = MKMapPointForCoordinate(CLLocationCoordinate2DMake(CLLocationDegrees(boundingBox.x0), CLLocationDegrees(boundingBox.y0)));
         let botRight:MKMapPoint  = MKMapPointForCoordinate(CLLocationCoordinate2DMake(CLLocationDegrees(boundingBox.xf), CLLocationDegrees(boundingBox.yf)));
-    
+        
         return MKMapRectMake(topLeft.x, botRight.y, fabs(botRight.x - topLeft.x), fabs(botRight.y - topLeft.y));
     }
     
