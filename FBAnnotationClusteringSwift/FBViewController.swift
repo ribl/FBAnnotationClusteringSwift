@@ -86,13 +86,7 @@ extension FBViewController : MKMapViewDelegate {
             
             reuseId = "Cluster"
             var clusterView = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseId)
-            if clusterView == nil {
-                clusterView = FBAnnotationClusterView(annotation: annotation, reuseIdentifier: reuseId)
-            } else {
-                clusterView.annotation = annotation
-            }
-            
-            
+            clusterView = FBAnnotationClusterView(annotation: annotation, reuseIdentifier: reuseId)
 
             return clusterView
             
@@ -100,11 +94,7 @@ extension FBViewController : MKMapViewDelegate {
         
             reuseId = "Pin"
             var pinView = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseId) as? MKPinAnnotationView
-            if pinView == nil {
-                pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
-            } else {
-                pinView?.annotation = annotation
-            }
+            pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
             
             
             pinView!.pinColor = .Green
