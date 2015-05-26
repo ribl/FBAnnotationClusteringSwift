@@ -26,7 +26,9 @@ These image names are hard-coded in FBAnnotationClusterView.swift, and give you 
 
 ## Usage
 
-Use FBViewController.swift as a guide.  For demonstration purposes, it drops 1000 random pins near Ghana.
+Use FBViewController.swift as a guide.  For demonstration purposes, it drops 1000 random pins near Ghana.  
+
+Follow instructions below for a barely-working implementation.
 
 ### Step 1:  Get a handle to the clustering manager
 
@@ -39,6 +41,7 @@ let clusteringManager = FBClusteringManager()
 ```
 var array:[FBAnnotation] = []
 
+// drop two arbitrary pins somewhere near Louisville, Kentucky
 let pinOne = FBAnnotation()
 pinOne.coordinate = CLLocationCoordinate2D(latitude: 38.188805, longitude: -85.6767705)
 
@@ -59,7 +62,7 @@ Add this to the top of your ViewController:
 import MapKit
 ```
 
-Add a MapKit View and set the delegate.  
+Add a MapKit View in the Storyboard, and set the delegate.  
 
 ### Step 3:  Return either a cluster or a pin in the MKMapViewDelegate
 
