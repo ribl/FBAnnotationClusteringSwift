@@ -13,9 +13,9 @@ class FBAnnotationCluster : NSObject {
     
     var coordinate = CLLocationCoordinate2D(latitude: 39.208407, longitude: -76.799555)
     
-    var title:String? = nil
+    var title:String = "cluster"
     var subtitle:String? = nil
-
+    
     var annotations:[MKAnnotation] = []
     
 }

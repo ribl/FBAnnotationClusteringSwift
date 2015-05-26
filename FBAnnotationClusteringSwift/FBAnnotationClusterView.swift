@@ -24,7 +24,7 @@ class FBAnnotationClusterView : MKAnnotationView {
     override init!(annotation: MKAnnotation!, reuseIdentifier: String!){
         super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
         
-        let cluster:FBAnnotationCluster = annotation as FBAnnotationCluster
+        let cluster:FBAnnotationCluster = annotation as! FBAnnotationCluster
         count = cluster.annotations.count
         
         // change the size of the cluster image based on number of stories
@@ -48,7 +48,7 @@ class FBAnnotationClusterView : MKAnnotationView {
         
         backgroundColor = UIColor.clearColor()
         setupLabel()
-        setCount(count)
+        setTheCount(count)
     }
     
     required override init(frame: CGRect) {
@@ -78,7 +78,7 @@ class FBAnnotationClusterView : MKAnnotationView {
         
     }
     
-    func setCount(localCount:Int){
+    func setTheCount(localCount:Int){
         count = localCount;
         
         countLabel?.text = "\(localCount)"
