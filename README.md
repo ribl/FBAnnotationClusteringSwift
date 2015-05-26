@@ -51,31 +51,47 @@ array.append(pinTwo)
 clusteringManager.addAnnotations(array)
 ```
 
-### Step 3:  Return either a cluster or a pin in the MKMapViewDelegate
+### Step 3:  Wire up your map
+
+Add this to the top of your ViewController:
 
 ```
-func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
-    
-    var reuseId = ""
-    
-    if annotation.isKindOfClass(FBAnnotationCluster) {
-        
-        reuseId = "Cluster"
-        var clusterView = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseId)
-        clusterView = FBAnnotationClusterView(annotation: annotation, reuseIdentifier: reuseId)
+import MapKit
+```
 
-        return clusterView
-        
-    } else {
+Add a MapKit View and set the delegate.  
+
+### Step 3:  Return either a cluster or a pin in the MKMapViewDelegate
+
+Implement these MKMapViewDelegate methods:
+
+```
+extension ViewController: MKMapViewDelegate {
+
+    func mapView(mapView: MKMapView!, regionDidChangeAnimated animated: Bool){
+        NSOperationQueue().addOperationWithBlock({
+            let mapBoundsWidth = Double(self.mapView.bounds.size.width)
+            let mapRectWidth:Double = self.mapView.visibleMapRect.size.width
+            let scale:Double = mapBoundsWidth / mapRectWidth
+            let annotationArray = self.clusteringManager.clusteredAnnotationsWithinMapRect(self.mapView.visibleMapRect, withZoomScale:scale)
+            self.clusteringManager.displayAnnotations(annotationArray, onMapView:self.mapView)
+        })
+    }
     
-        reuseId = "Pin"
-        var pinView = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseId) as? MKPinAnnotationView
-        pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
-        
-        
-        pinView!.pinColor = .Green
-        
-        return pinView
+    func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
+        var reuseId = ""
+        if annotation.isKindOfClass(FBAnnotationCluster) {
+            reuseId = "Cluster"
+            var clusterView = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseId)
+            clusterView = FBAnnotationClusterView(annotation: annotation, reuseIdentifier: reuseId)
+            return clusterView
+        } else {
+            reuseId = "Pin"
+            var pinView = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseId) as? MKPinAnnotationView
+            pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+            pinView!.pinColor = .Green
+            return pinView
+        }
     }
     
 }
