@@ -22,3 +22,61 @@ Also make sure you have images in your Images.xcassets named:
 * "clusterMedium"
 * "clusterSmall"
 
+These image names are hard-coded in FBAnnotationClusterView.swift, and give you different sized circles based on the number of pins in that cluster.
+
+## Usage
+
+Use FBViewController.swift as a guide.  For demonstration purposes, it drops 1000 random pins near Ghana.
+
+### Step 1:  Get a handle to the clustering manager
+
+```
+let clusteringManager = FBClusteringManager()
+```
+
+### Step 2:  Feed pins into the clustering manager
+
+```
+var array:[FBAnnotation] = []
+
+let pinOne = FBAnnotation()
+pinOne.coordinate = CLLocationCoordinate2D(latitude: 38.188805, longitude: -85.6767705)
+
+let pinTwo = FBAnnotation()
+pinTwo.coordinate = CLLocationCoordinate2D(latitude: 38.188806, longitude: -85.6767707)
+
+array.append(pinOne)
+array.append(pinTwo)
+
+clusteringManager.addAnnotations(array)
+```
+
+### Step 3:  Return either a cluster or a pin in the MKMapViewDelegate
+
+```
+func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
+    
+    var reuseId = ""
+    
+    if annotation.isKindOfClass(FBAnnotationCluster) {
+        
+        reuseId = "Cluster"
+        var clusterView = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseId)
+        clusterView = FBAnnotationClusterView(annotation: annotation, reuseIdentifier: reuseId)
+
+        return clusterView
+        
+    } else {
+    
+        reuseId = "Pin"
+        var pinView = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseId) as? MKPinAnnotationView
+        pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+        
+        
+        pinView!.pinColor = .Green
+        
+        return pinView
+    }
+    
+}
+```
