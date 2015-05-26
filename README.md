@@ -66,9 +66,9 @@ import MapKit
 
 Add a MapKit View in the Storyboard, and set the delegate.  
 
-### Step 3:  Return either a cluster or a pin in the MKMapViewDelegate
+### Step 4:  Return either a cluster or a pin in the MKMapViewDelegate
 
-Implement these MKMapViewDelegate methods:
+Drop in these MKMapViewDelegate methods:
 
 ```
 extension ViewController: MKMapViewDelegate {
