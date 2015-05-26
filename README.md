@@ -6,7 +6,7 @@ This is a Swift translation of [FBAnnotationClustering](https://github.com/infin
 
 ## Installation
 
-This is just a file copy.  No CocoaPods.
+This uses just file copy.  No CocoaPods.
 
 Copy the following Swift files to your project:
 
