@@ -23,7 +23,7 @@ class FBClusteringManager : NSObject {
     
     var lock:NSRecursiveLock = NSRecursiveLock()
     
-    
+        
     override init(){
         super.init()
     }
@@ -55,9 +55,9 @@ class FBClusteringManager : NSObject {
         
         let cellSize:CGFloat = FBClusteringManager.FBCellSizeForZoomScale(MKZoomScale(zoomScale))
         
-        //        if delegate?.respondsToSelector("cellSizeFactorForCoordinator:") {
-        //            cellSize *= delegate.cellSizeFactorForCoordinator(self)
-        //        }
+//        if delegate?.respondsToSelector("cellSizeFactorForCoordinator:") {
+//            cellSize *= delegate.cellSizeFactorForCoordinator(self)
+//        }
         
         let scaleFactor:Double = zoomScale / Double(cellSize)
         
@@ -65,15 +65,15 @@ class FBClusteringManager : NSObject {
         let maxX:Int = Int(floor(MKMapRectGetMaxX(rect) * scaleFactor))
         let minY:Int = Int(floor(MKMapRectGetMinY(rect) * scaleFactor))
         let maxY:Int = Int(floor(MKMapRectGetMaxY(rect) * scaleFactor))
-        
+
         var clusteredAnnotations = [MKAnnotation]()
-        
+
         lock.lock()
-        
+
         for i in minX...maxX {
-            
+
             for j in minY...maxY {
-                
+
                 let mapPoint = MKMapPoint(x: Double(i)/scaleFactor, y: Double(j)/scaleFactor)
                 
                 let mapSize = MKMapSize(width: 1.0/scaleFactor, height: 1.0/scaleFactor)
@@ -83,6 +83,7 @@ class FBClusteringManager : NSObject {
                 
                 var totalLatitude:Double = 0
                 var totalLongitude:Double = 0
+                
                 var annotations = [MKAnnotation]()
                 
                 tree?.enumerateAnnotationsInBox(mapBox){ obj in
@@ -106,28 +107,19 @@ class FBClusteringManager : NSObject {
                     cluster.coordinate = coordinate
                     cluster.annotations = annotations
                     
-//                    println("cluster.annotations.count:: \(cluster.annotations.count)")
+                    println("cluster.annotations.count:: \(cluster.annotations.count)")
                     
                     clusteredAnnotations.append(cluster)
                 }
+
                 
                 
             }
-            
+           
         }
         
-        
+    
         lock.unlock()
-        println("")
-        println("")
-        println("")
-        println("")
-        
-        for (index, cluster) in enumerate(clusteredAnnotations) {
-            let fbCluster = cluster as FBAnnotationCluster
-            println("index:: \(index) clusteredAnnotations.count:: \(fbCluster.annotations.count) coord:: \(cluster.coordinate.latitude), \(cluster.coordinate.longitude)")
-            
-        }
         
         return clusteredAnnotations
     }
@@ -151,11 +143,11 @@ class FBClusteringManager : NSObject {
         before.removeObject(mapView.userLocation)
         var after = NSSet(array: annotations)
         var toKeep = NSMutableSet(set: before)
-        toKeep.intersectSet(after)
+        toKeep.intersectSet(after as Set<NSObject>)
         var toAdd = NSMutableSet(set: after)
-        toAdd.minusSet(toKeep)
+        toAdd.minusSet(toKeep as Set<NSObject>)
         var toRemove = NSMutableSet(set: before)
-        toRemove.minusSet(after)
+        toRemove.minusSet(after as Set<NSObject>)
         
         dispatch_async(dispatch_get_main_queue())  {
             mapView.addAnnotations(toAdd.allObjects)
@@ -165,24 +157,12 @@ class FBClusteringManager : NSObject {
     }
     
     class func FBZoomScaleToZoomLevel(scale:MKZoomScale) -> Int{
-        println("scale:: \(scale)")
-        
         let totalTilesAtMaxZoom:Double = MKMapSizeWorld.width / 256.0
-        println("totalTilesAtMaxZoom:: \(totalTilesAtMaxZoom)")
-        
         let zoomLevelAtMaxZoom:Int = Int(log2(totalTilesAtMaxZoom))
-        println("zoomLevelAtMaxZoom:: \(zoomLevelAtMaxZoom)")
-        
         let floorLog2ScaleFloat = floor(log2f(Float(scale))) + 0.5
-        println("floorLog2ScaleFloat:: \(floorLog2ScaleFloat)")
-        
         let sum:Int = zoomLevelAtMaxZoom + Int(floorLog2ScaleFloat)
-        
         let zoomLevel:Int = max(0, sum)
-        
         return zoomLevel;
-        
-        
     }
     
     class func FBCellSizeForZoomScale(zoomScale:MKZoomScale) -> CGFloat {
