@@ -6,6 +6,8 @@ Map clustering is a common enough map feature in modern apps.  When I couldn't f
 
 ![Simulator Image](https://github.com/ribl/FBAnnotationClusteringSwift/blob/master/GitHubImages/simulatorShot.png)
 
+(left: sample project with a lot of pins in the DC area.  right: ribl screenshot using clusters)
+
 ## Installation
 
 This uses just file copy.  No CocoaPod implementation.
