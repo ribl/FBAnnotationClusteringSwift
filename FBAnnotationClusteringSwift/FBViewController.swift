@@ -20,7 +20,7 @@ class FBViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        var array:[MKAnnotation] = randomLocationsWithCount(numberOfLocations)
+        let array:[MKAnnotation] = randomLocationsWithCount(numberOfLocations)
         
         clusteringManager.addAnnotations(array)
         clusteringManager.delegate = self;
@@ -39,7 +39,7 @@ class FBViewController: UIViewController {
     
     func randomLocationsWithCount(count:Int) -> [FBAnnotation] {
         var array:[FBAnnotation] = []
-        for i in 0...count {
+        for _ in 0...count {
             let a:FBAnnotation = FBAnnotation()
             a.coordinate = CLLocationCoordinate2D(latitude: drand48() * 40 - 20, longitude: drand48() * 80 - 40 )
             array.append(a)
@@ -60,7 +60,7 @@ extension FBViewController : FBClusteringManagerDelegate {
 
 extension FBViewController : MKMapViewDelegate {
     
-    func mapView(mapView: MKMapView!, regionDidChangeAnimated animated: Bool){
+    func mapView(mapView: MKMapView, regionDidChangeAnimated animated: Bool){
         
         NSOperationQueue().addOperationWithBlock({
         
@@ -78,7 +78,7 @@ extension FBViewController : MKMapViewDelegate {
 
     }
     
-    func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
+    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
         
         var reuseId = ""
         
@@ -97,7 +97,7 @@ extension FBViewController : MKMapViewDelegate {
             pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
             
             
-            pinView!.pinColor = .Green
+            pinView!.pinTintColor = UIColor.greenColor()
             
             return pinView
         }

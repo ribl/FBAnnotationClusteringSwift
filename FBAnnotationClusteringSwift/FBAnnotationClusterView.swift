@@ -21,7 +21,7 @@ class FBAnnotationClusterView : MKAnnotationView {
     
     var countLabel:UILabel? = nil
     
-    override init!(annotation: MKAnnotation!, reuseIdentifier: String!){
+    override init(annotation: MKAnnotation?, reuseIdentifier: String?){
         super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
         
         let cluster:FBAnnotationCluster = annotation as! FBAnnotationCluster
@@ -56,7 +56,7 @@ class FBAnnotationClusterView : MKAnnotationView {
         
     }
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
@@ -64,7 +64,7 @@ class FBAnnotationClusterView : MKAnnotationView {
         countLabel = UILabel(frame: bounds)
         
         if let countLabel = countLabel {
-            countLabel.autoresizingMask = .FlexibleWidth | .FlexibleHeight
+            countLabel.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
             countLabel.textAlignment = .Center
             countLabel.backgroundColor = UIColor.clearColor()
             countLabel.textColor = UIColor.whiteColor()
@@ -88,7 +88,7 @@ class FBAnnotationClusterView : MKAnnotationView {
     override func layoutSubviews() {
         
         // Images are faster than using drawRect:
-        var imageAsset = UIImage(named: imageName)!
+        let imageAsset = UIImage(named: imageName)!
         
         countLabel?.frame = self.bounds
         image = imageAsset

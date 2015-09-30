@@ -103,11 +103,11 @@ class FBClusteringManager : NSObject {
                         latitude: CLLocationDegrees(totalLatitude)/CLLocationDegrees(count),
                         longitude: CLLocationDegrees(totalLongitude)/CLLocationDegrees(count)
                     )
-                    var cluster = FBAnnotationCluster()
+                    let cluster = FBAnnotationCluster()
                     cluster.coordinate = coordinate
                     cluster.annotations = annotations
                     
-                    println("cluster.annotations.count:: \(cluster.annotations.count)")
+                    print("cluster.annotations.count:: \(cluster.annotations.count)")
                     
                     clusteredAnnotations.append(cluster)
                 }
@@ -141,18 +141,23 @@ class FBClusteringManager : NSObject {
         
         dispatch_async(dispatch_get_main_queue())  {
 
-            var before = NSMutableSet(array: mapView.annotations)
+            let before = NSMutableSet(array: mapView.annotations)
             before.removeObject(mapView.userLocation)
-            var after = NSSet(array: annotations)
-            var toKeep = NSMutableSet(set: before)
+            let after = NSSet(array: annotations)
+            let toKeep = NSMutableSet(set: before)
             toKeep.intersectSet(after as Set<NSObject>)
-            var toAdd = NSMutableSet(set: after)
+            let toAdd = NSMutableSet(set: after)
             toAdd.minusSet(toKeep as Set<NSObject>)
-            var toRemove = NSMutableSet(set: before)
+            let toRemove = NSMutableSet(set: before)
             toRemove.minusSet(after as Set<NSObject>)
         
-            mapView.addAnnotations(toAdd.allObjects)
-            mapView.removeAnnotations(toRemove.allObjects)
+            if let toAddAnnotations = toAdd.allObjects as? [MKAnnotation]{
+                mapView.addAnnotations(toAddAnnotations)
+            }
+            
+            if let removeAnnotations = toRemove.allObjects as? [MKAnnotation]{
+                mapView.removeAnnotations(removeAnnotations)
+            }
         }
         
     }

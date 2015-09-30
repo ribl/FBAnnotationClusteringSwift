@@ -13,7 +13,7 @@ import MapKit
 class FBAnnotation : NSObject {
     
     var coordinate = CLLocationCoordinate2D(latitude: 39.208407, longitude: -76.799555)
-    var title = ""
+    var title: String? = ""
     
 }
 
