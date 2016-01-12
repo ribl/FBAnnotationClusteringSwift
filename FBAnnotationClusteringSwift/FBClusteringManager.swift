@@ -166,7 +166,7 @@ class FBClusteringManager : NSObject {
         let totalTilesAtMaxZoom:Double = MKMapSizeWorld.width / 256.0
         let zoomLevelAtMaxZoom:Int = Int(log2(totalTilesAtMaxZoom))
         let floorLog2ScaleFloat = floor(log2f(Float(scale))) + 0.5
-        guard !floorLog2ScaleFloat.isInfinite else { return 0 }
+        guard !floorLog2ScaleFloat.isInfinite else { return floorLog2ScaleFloat.isSignMinus ? 0 : 19 }
         let sum:Int = zoomLevelAtMaxZoom + Int(floorLog2ScaleFloat)
         let zoomLevel:Int = max(0, sum)
         return zoomLevel;
@@ -189,10 +189,11 @@ class FBClusteringManager : NSObject {
             return 32
         case 18:
             return 32
-        case 19:
+        case 18 ..< Int.max:
             return 16
             
         default:
+            // less than 13 zoom level
             return 88
         }
         
