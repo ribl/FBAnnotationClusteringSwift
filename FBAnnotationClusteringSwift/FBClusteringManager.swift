@@ -51,7 +51,7 @@ class FBClusteringManager : NSObject {
     }
     
     func clusteredAnnotationsWithinMapRect(rect:MKMapRect, withZoomScale zoomScale:Double) -> [MKAnnotation]{
-        
+        guard !zoomScale.isInfinite else { return [] }
         
         let cellSize:CGFloat = FBClusteringManager.FBCellSizeForZoomScale(MKZoomScale(zoomScale))
         
