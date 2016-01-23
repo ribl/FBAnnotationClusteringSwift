@@ -142,6 +142,7 @@ class FBClusteringManager : NSObject {
             // gather existing clusters
             let beforeClusters = mapView.annotations.filter { $0 is FBAnnotationCluster }
             let afterClusters = annotations.filter { $0 is FBAnnotationCluster }
+            let afterPins = annotations.filter { !($0 is FBAnnotationCluster) }
             
             guard let beforeClustersArray = beforeClusters as? [FBAnnotationCluster],
                 let afterClustersArray = afterClusters as? [FBAnnotationCluster]
@@ -155,7 +156,7 @@ class FBClusteringManager : NSObject {
             let addClustersArray = Array(addClustersSet)
             let removeClustersArray = Array(removeClustersSet)
             
-            mapView.addAnnotations(addClustersArray)
+            mapView.addAnnotations(addClustersArray + afterPins)
             mapView.removeAnnotations(removeClustersArray)
         }
         
