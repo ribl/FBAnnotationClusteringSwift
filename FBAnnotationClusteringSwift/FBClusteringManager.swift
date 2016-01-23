@@ -106,9 +106,7 @@ class FBClusteringManager : NSObject {
                     let cluster = FBAnnotationCluster()
                     cluster.coordinate = coordinate
                     cluster.annotations = annotations
-                    
-                    print("cluster.annotations.count:: \(cluster.annotations.count)")
-                    
+                                        
                     clusteredAnnotations.append(cluster)
                 }
 
@@ -141,23 +139,24 @@ class FBClusteringManager : NSObject {
         
         dispatch_async(dispatch_get_main_queue())  {
 
-            let before = NSMutableSet(array: mapView.annotations)
-            before.removeObject(mapView.userLocation)
-            let after = NSSet(array: annotations)
-            let toKeep = NSMutableSet(set: before)
-            toKeep.intersectSet(after as Set<NSObject>)
-            let toAdd = NSMutableSet(set: after)
-            toAdd.minusSet(toKeep as Set<NSObject>)
-            let toRemove = NSMutableSet(set: before)
-            toRemove.minusSet(after as Set<NSObject>)
-        
-            if let toAddAnnotations = toAdd.allObjects as? [MKAnnotation]{
-                mapView.addAnnotations(toAddAnnotations)
-            }
+            // gather existing clusters
+            let beforeClusters = mapView.annotations.filter { $0 is FBAnnotationCluster }
+            let afterClusters = annotations.filter { $0 is FBAnnotationCluster }
             
-            if let removeAnnotations = toRemove.allObjects as? [MKAnnotation]{
-                mapView.removeAnnotations(removeAnnotations)
-            }
+            guard let beforeClustersArray = beforeClusters as? [FBAnnotationCluster],
+                let afterClustersArray = afterClusters as? [FBAnnotationCluster]
+                else { return }
+            
+            let beforeClustersSet = Set(beforeClustersArray)
+            let afterClustersSet = Set(afterClustersArray)
+            let keepClustersSet = beforeClustersSet.intersect(afterClustersSet)
+            let addClustersSet = afterClustersSet.subtract(keepClustersSet)
+            let removeClustersSet = beforeClustersSet.subtract(afterClustersSet)
+            let addClustersArray = Array(addClustersSet)
+            let removeClustersArray = Array(removeClustersSet)
+            
+            mapView.addAnnotations(addClustersArray)
+            mapView.removeAnnotations(removeClustersArray)
         }
         
     }

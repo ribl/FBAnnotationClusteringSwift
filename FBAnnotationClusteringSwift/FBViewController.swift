@@ -83,7 +83,6 @@ extension FBViewController : MKMapViewDelegate {
         var reuseId = ""
         
         if annotation.isKindOfClass(FBAnnotationCluster) {
-            
             reuseId = "Cluster"
             var clusterView = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseId)
             clusterView = FBAnnotationClusterView(annotation: annotation, reuseIdentifier: reuseId)
@@ -102,6 +101,10 @@ extension FBViewController : MKMapViewDelegate {
             return pinView
         }
         
+    }
+    
+    func mapView(mapView: MKMapView, didAddAnnotationViews views: [MKAnnotationView]) {
+        print("views: \(views)")
     }
     
 }
