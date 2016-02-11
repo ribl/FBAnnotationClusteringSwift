@@ -13,8 +13,6 @@
 		FC59A7ED1ACD99BE009EFA30 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC59A7EC1ACD99BE009EFA30 /* Images.xcassets */; };
 		FC59A7F01ACD99BE009EFA30 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC59A7EE1ACD99BE009EFA30 /* LaunchScreen.xib */; };
 		FC59A7FC1ACD99BE009EFA30 /* FBAnnotationClusteringSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC59A7FB1ACD99BE009EFA30 /* FBAnnotationClusteringSwiftTests.swift */; };
-		FC59A8081ACD9D4B009EFA30 /* FBAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC59A8071ACD9D4B009EFA30 /* FBAnnotation.swift */; };
-		FC96203D1ACDE8A00004599C /* FBAnnotationClusterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC96203C1ACDE8A00004599C /* FBAnnotationClusterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,8 +36,6 @@
 		FC59A7F51ACD99BE009EFA30 /* FBAnnotationClusteringSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FBAnnotationClusteringSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC59A7FA1ACD99BE009EFA30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC59A7FB1ACD99BE009EFA30 /* FBAnnotationClusteringSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBAnnotationClusteringSwiftTests.swift; sourceTree = "<group>"; };
-		FC59A8071ACD9D4B009EFA30 /* FBAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBAnnotation.swift; sourceTree = "<group>"; };
-		FC96203C1ACDE8A00004599C /* FBAnnotationClusterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBAnnotationClusterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,8 +83,6 @@
 				FC59A7EC1ACD99BE009EFA30 /* Images.xcassets */,
 				FC59A7EE1ACD99BE009EFA30 /* LaunchScreen.xib */,
 				FC59A7E31ACD99BE009EFA30 /* Supporting Files */,
-				FC96203C1ACDE8A00004599C /* FBAnnotationClusterView.swift */,
-				FC59A8071ACD9D4B009EFA30 /* FBAnnotation.swift */,
 			);
 			path = FBAnnotationClusteringSwift;
 			sourceTree = "<group>";
@@ -220,9 +214,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC59A8081ACD9D4B009EFA30 /* FBAnnotation.swift in Sources */,
 				FC59A7E81ACD99BE009EFA30 /* FBViewController.swift in Sources */,
-				FC96203D1ACDE8A00004599C /* FBAnnotationClusterView.swift in Sources */,
 				FC59A7E61ACD99BE009EFA30 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
