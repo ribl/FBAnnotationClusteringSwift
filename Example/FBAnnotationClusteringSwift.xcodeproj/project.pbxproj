@@ -7,18 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FC1B960E1ACDD017001A422D /* FBAnnotationCluster.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1B960D1ACDD017001A422D /* FBAnnotationCluster.swift */; };
 		FC59A7E61ACD99BE009EFA30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC59A7E51ACD99BE009EFA30 /* AppDelegate.swift */; };
 		FC59A7E81ACD99BE009EFA30 /* FBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC59A7E71ACD99BE009EFA30 /* FBViewController.swift */; };
 		FC59A7EB1ACD99BE009EFA30 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC59A7E91ACD99BE009EFA30 /* Main.storyboard */; };
 		FC59A7ED1ACD99BE009EFA30 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC59A7EC1ACD99BE009EFA30 /* Images.xcassets */; };
 		FC59A7F01ACD99BE009EFA30 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC59A7EE1ACD99BE009EFA30 /* LaunchScreen.xib */; };
 		FC59A7FC1ACD99BE009EFA30 /* FBAnnotationClusteringSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC59A7FB1ACD99BE009EFA30 /* FBAnnotationClusteringSwiftTests.swift */; };
-		FC59A8061ACD9D22009EFA30 /* FBClusteringManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC59A8051ACD9D22009EFA30 /* FBClusteringManager.swift */; };
 		FC59A8081ACD9D4B009EFA30 /* FBAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC59A8071ACD9D4B009EFA30 /* FBAnnotation.swift */; };
-		FC59A80A1ACDA181009EFA30 /* FBQuadTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC59A8091ACDA181009EFA30 /* FBQuadTree.swift */; };
-		FC59A80C1ACDA308009EFA30 /* FBQuadTreeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC59A80B1ACDA308009EFA30 /* FBQuadTreeNode.swift */; };
-		FC59A80E1ACDA3A5009EFA30 /* FBBoundingBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC59A80D1ACDA3A5009EFA30 /* FBBoundingBox.swift */; };
 		FC96203D1ACDE8A00004599C /* FBAnnotationClusterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC96203C1ACDE8A00004599C /* FBAnnotationClusterView.swift */; };
 /* End PBXBuildFile section */
 
@@ -33,7 +28,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		FC1B960D1ACDD017001A422D /* FBAnnotationCluster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBAnnotationCluster.swift; sourceTree = "<group>"; };
 		FC59A7E01ACD99BE009EFA30 /* FBAnnotationClusteringSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FBAnnotationClusteringSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC59A7E41ACD99BE009EFA30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC59A7E51ACD99BE009EFA30 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -44,11 +38,7 @@
 		FC59A7F51ACD99BE009EFA30 /* FBAnnotationClusteringSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FBAnnotationClusteringSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC59A7FA1ACD99BE009EFA30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC59A7FB1ACD99BE009EFA30 /* FBAnnotationClusteringSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBAnnotationClusteringSwiftTests.swift; sourceTree = "<group>"; };
-		FC59A8051ACD9D22009EFA30 /* FBClusteringManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBClusteringManager.swift; sourceTree = "<group>"; };
 		FC59A8071ACD9D4B009EFA30 /* FBAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBAnnotation.swift; sourceTree = "<group>"; };
-		FC59A8091ACDA181009EFA30 /* FBQuadTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBQuadTree.swift; sourceTree = "<group>"; };
-		FC59A80B1ACDA308009EFA30 /* FBQuadTreeNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBQuadTreeNode.swift; sourceTree = "<group>"; };
-		FC59A80D1ACDA3A5009EFA30 /* FBBoundingBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBBoundingBox.swift; sourceTree = "<group>"; };
 		FC96203C1ACDE8A00004599C /* FBAnnotationClusterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBAnnotationClusterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -97,13 +87,8 @@
 				FC59A7EC1ACD99BE009EFA30 /* Images.xcassets */,
 				FC59A7EE1ACD99BE009EFA30 /* LaunchScreen.xib */,
 				FC59A7E31ACD99BE009EFA30 /* Supporting Files */,
-				FC59A8051ACD9D22009EFA30 /* FBClusteringManager.swift */,
-				FC1B960D1ACDD017001A422D /* FBAnnotationCluster.swift */,
 				FC96203C1ACDE8A00004599C /* FBAnnotationClusterView.swift */,
 				FC59A8071ACD9D4B009EFA30 /* FBAnnotation.swift */,
-				FC59A8091ACDA181009EFA30 /* FBQuadTree.swift */,
-				FC59A80B1ACDA308009EFA30 /* FBQuadTreeNode.swift */,
-				FC59A80D1ACDA3A5009EFA30 /* FBBoundingBox.swift */,
 			);
 			path = FBAnnotationClusteringSwift;
 			sourceTree = "<group>";
@@ -236,14 +221,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC59A8081ACD9D4B009EFA30 /* FBAnnotation.swift in Sources */,
-				FC1B960E1ACDD017001A422D /* FBAnnotationCluster.swift in Sources */,
 				FC59A7E81ACD99BE009EFA30 /* FBViewController.swift in Sources */,
-				FC59A80E1ACDA3A5009EFA30 /* FBBoundingBox.swift in Sources */,
 				FC96203D1ACDE8A00004599C /* FBAnnotationClusterView.swift in Sources */,
-				FC59A80C1ACDA308009EFA30 /* FBQuadTreeNode.swift in Sources */,
 				FC59A7E61ACD99BE009EFA30 /* AppDelegate.swift in Sources */,
-				FC59A80A1ACDA181009EFA30 /* FBQuadTree.swift in Sources */,
-				FC59A8061ACD9D22009EFA30 /* FBClusteringManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
