@@ -1,15 +1,8 @@
-//
-//  FBAnnotationClusteringSwiftTests.swift
-//  FBAnnotationClusteringSwiftTests
-//
-//  Created by Robert Chen on 4/2/15.
-//  Copyright (c) 2015 Robert Chen. All rights reserved.
-//
-
 import UIKit
 import XCTest
+import FBAnnotationClusteringSwift
 
-class FBAnnotationClusteringSwiftTests: XCTestCase {
+class Tests: XCTestCase {
     
     override func setUp() {
         super.setUp()

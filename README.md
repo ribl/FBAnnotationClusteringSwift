@@ -10,7 +10,18 @@ Map clustering is a common enough map feature in modern apps.  When I couldn't f
 
 ## Installation
 
-This uses just file copy.  No CocoaPod implementation.
+####CocoaPods
+```
+pod 'FBAnnotationClusteringSwift'
+```
+
+```
+import FBAnnotationClusteringSwift
+```
+in class where do you need
+
+
+####Manually
 
 Copy the following Swift files to your project:
 
@@ -21,14 +32,6 @@ Copy the following Swift files to your project:
 * FBQuadTree.swift
 * FBQuadTreeNode.swift
 * FBBoundingBox.swift
-
-Also make sure you have images in your Images.xcassets named:
-
-* "clusterLarge"
-* "clusterMedium"
-* "clusterSmall"
-
-These image names are hard-coded in FBAnnotationClusterView.swift, and give you different sized circles based on the number of pins in that cluster.
 
 ## Usage
 
@@ -92,7 +95,7 @@ extension ViewController: MKMapViewDelegate {
         if annotation.isKindOfClass(FBAnnotationCluster) {
             reuseId = "Cluster"
             var clusterView = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseId)
-            clusterView = FBAnnotationClusterView(annotation: annotation, reuseIdentifier: reuseId)
+            clusterView = FBAnnotationClusterView(annotation: annotation, reuseIdentifier: reuseId, options: nil)
             return clusterView
         } else {
             reuseId = "Pin"
@@ -105,3 +108,6 @@ extension ViewController: MKMapViewDelegate {
     
 }
 ```
+
+For image's cluster
+You can use those provided by me, or you can pass the name of the image you have in your project. Remember you will need 3 different images depending on the cluster size

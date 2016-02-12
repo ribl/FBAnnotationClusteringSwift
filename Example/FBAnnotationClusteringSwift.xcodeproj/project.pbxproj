@@ -7,170 +7,222 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FC59A7E61ACD99BE009EFA30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC59A7E51ACD99BE009EFA30 /* AppDelegate.swift */; };
-		FC59A7E81ACD99BE009EFA30 /* FBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC59A7E71ACD99BE009EFA30 /* FBViewController.swift */; };
-		FC59A7EB1ACD99BE009EFA30 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC59A7E91ACD99BE009EFA30 /* Main.storyboard */; };
-		FC59A7ED1ACD99BE009EFA30 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC59A7EC1ACD99BE009EFA30 /* Images.xcassets */; };
-		FC59A7F01ACD99BE009EFA30 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC59A7EE1ACD99BE009EFA30 /* LaunchScreen.xib */; };
-		FC59A7FC1ACD99BE009EFA30 /* FBAnnotationClusteringSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC59A7FB1ACD99BE009EFA30 /* FBAnnotationClusteringSwiftTests.swift */; };
+		21B71E5C3F6990471DC3728E /* Pods_FBAnnotationClusteringSwift_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC2EB781B1BA8D7AC3F5FB11 /* Pods_FBAnnotationClusteringSwift_Example.framework */; };
+		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		8DB6CBFCBE104241341DD220 /* Pods_FBAnnotationClusteringSwift_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B54E787713C1A6ABF1541261 /* Pods_FBAnnotationClusteringSwift_Tests.framework */; };
+		FE07C7E91C6E42EE00B219A5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE07C7E81C6E42EE00B219A5 /* Images.xcassets */; };
+		FE1225931C6E312200A5E91D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1225901C6E312200A5E91D /* AppDelegate.swift */; };
+		FE1225941C6E312200A5E91D /* FBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1225911C6E312200A5E91D /* FBViewController.swift */; };
+		FE12259A1C6E313400A5E91D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE1225961C6E313400A5E91D /* LaunchScreen.xib */; };
+		FE12259B1C6E313400A5E91D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE1225981C6E313400A5E91D /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		FC59A7F61ACD99BE009EFA30 /* PBXContainerItemProxy */ = {
+		607FACE61AFB9204008FA782 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = FC59A7D81ACD99BE009EFA30 /* Project object */;
+			containerPortal = 607FACC81AFB9204008FA782 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = FC59A7DF1ACD99BE009EFA30;
+			remoteGlobalIDString = 607FACCF1AFB9204008FA782;
 			remoteInfo = FBAnnotationClusteringSwift;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		FC59A7E01ACD99BE009EFA30 /* FBAnnotationClusteringSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FBAnnotationClusteringSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		FC59A7E41ACD99BE009EFA30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FC59A7E51ACD99BE009EFA30 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FC59A7E71ACD99BE009EFA30 /* FBViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBViewController.swift; sourceTree = "<group>"; };
-		FC59A7EA1ACD99BE009EFA30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		FC59A7EC1ACD99BE009EFA30 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		FC59A7EF1ACD99BE009EFA30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		FC59A7F51ACD99BE009EFA30 /* FBAnnotationClusteringSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FBAnnotationClusteringSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FC59A7FA1ACD99BE009EFA30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FC59A7FB1ACD99BE009EFA30 /* FBAnnotationClusteringSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBAnnotationClusteringSwiftTests.swift; sourceTree = "<group>"; };
+		560BC1897FF87118C52FC29D /* Pods-FBAnnotationClusteringSwift_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBAnnotationClusteringSwift_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-FBAnnotationClusteringSwift_Example/Pods-FBAnnotationClusteringSwift_Example.release.xcconfig"; sourceTree = "<group>"; };
+		607FACD01AFB9204008FA782 /* FBAnnotationClusteringSwift_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FBAnnotationClusteringSwift_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		607FACE51AFB9204008FA782 /* FBAnnotationClusteringSwift_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FBAnnotationClusteringSwift_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
+		7F27E8C19C5A405B5072D1D0 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		8BFE2416CCF84B3F2AFDD15B /* FBAnnotationClusteringSwift.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = FBAnnotationClusteringSwift.podspec; path = ../FBAnnotationClusteringSwift.podspec; sourceTree = "<group>"; };
+		9FA0BD969C7743DC2F85985B /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		B54E787713C1A6ABF1541261 /* Pods_FBAnnotationClusteringSwift_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FBAnnotationClusteringSwift_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC0897C1FEBEFEF8FD6F4861 /* Pods-FBAnnotationClusteringSwift_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBAnnotationClusteringSwift_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FBAnnotationClusteringSwift_Tests/Pods-FBAnnotationClusteringSwift_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		CDF8B325F048A96548D5C596 /* Pods-FBAnnotationClusteringSwift_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBAnnotationClusteringSwift_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FBAnnotationClusteringSwift_Tests/Pods-FBAnnotationClusteringSwift_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		EAF4AFBA74BA75C0071EBDE1 /* Pods-FBAnnotationClusteringSwift_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBAnnotationClusteringSwift_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FBAnnotationClusteringSwift_Example/Pods-FBAnnotationClusteringSwift_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		EC2EB781B1BA8D7AC3F5FB11 /* Pods_FBAnnotationClusteringSwift_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FBAnnotationClusteringSwift_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE07C7E81C6E42EE00B219A5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		FE1225901C6E312200A5E91D /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FE1225911C6E312200A5E91D /* FBViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBViewController.swift; sourceTree = "<group>"; };
+		FE1225971C6E313400A5E91D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		FE1225991C6E313400A5E91D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		FC59A7DD1ACD99BE009EFA30 /* Frameworks */ = {
+		607FACCD1AFB9204008FA782 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21B71E5C3F6990471DC3728E /* Pods_FBAnnotationClusteringSwift_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FC59A7F21ACD99BE009EFA30 /* Frameworks */ = {
+		607FACE21AFB9204008FA782 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DB6CBFCBE104241341DD220 /* Pods_FBAnnotationClusteringSwift_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		FC59A7D71ACD99BE009EFA30 = {
+		3C87DB07B66AD32C5FD506C4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				FC59A7E21ACD99BE009EFA30 /* FBAnnotationClusteringSwift */,
-				FC59A7F81ACD99BE009EFA30 /* FBAnnotationClusteringSwiftTests */,
-				FC59A7E11ACD99BE009EFA30 /* Products */,
+				EC2EB781B1BA8D7AC3F5FB11 /* Pods_FBAnnotationClusteringSwift_Example.framework */,
+				B54E787713C1A6ABF1541261 /* Pods_FBAnnotationClusteringSwift_Tests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		607FACC71AFB9204008FA782 = {
+			isa = PBXGroup;
+			children = (
+				607FACF51AFB993E008FA782 /* Podspec Metadata */,
+				607FACD21AFB9204008FA782 /* Example for FBAnnotationClusteringSwift */,
+				607FACE81AFB9204008FA782 /* Tests */,
+				607FACD11AFB9204008FA782 /* Products */,
+				A17357F97564DC02C3863207 /* Pods */,
+				3C87DB07B66AD32C5FD506C4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		FC59A7E11ACD99BE009EFA30 /* Products */ = {
+		607FACD11AFB9204008FA782 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FC59A7E01ACD99BE009EFA30 /* FBAnnotationClusteringSwift.app */,
-				FC59A7F51ACD99BE009EFA30 /* FBAnnotationClusteringSwiftTests.xctest */,
+				607FACD01AFB9204008FA782 /* FBAnnotationClusteringSwift_Example.app */,
+				607FACE51AFB9204008FA782 /* FBAnnotationClusteringSwift_Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		FC59A7E21ACD99BE009EFA30 /* FBAnnotationClusteringSwift */ = {
+		607FACD21AFB9204008FA782 /* Example for FBAnnotationClusteringSwift */ = {
 			isa = PBXGroup;
 			children = (
-				FC59A7E51ACD99BE009EFA30 /* AppDelegate.swift */,
-				FC59A7E71ACD99BE009EFA30 /* FBViewController.swift */,
-				FC59A7E91ACD99BE009EFA30 /* Main.storyboard */,
-				FC59A7EC1ACD99BE009EFA30 /* Images.xcassets */,
-				FC59A7EE1ACD99BE009EFA30 /* LaunchScreen.xib */,
-				FC59A7E31ACD99BE009EFA30 /* Supporting Files */,
+				FE07C7E81C6E42EE00B219A5 /* Images.xcassets */,
+				FE1225961C6E313400A5E91D /* LaunchScreen.xib */,
+				FE1225981C6E313400A5E91D /* Main.storyboard */,
+				FE1225901C6E312200A5E91D /* AppDelegate.swift */,
+				FE1225911C6E312200A5E91D /* FBViewController.swift */,
+				607FACD31AFB9204008FA782 /* Supporting Files */,
 			);
+			name = "Example for FBAnnotationClusteringSwift";
 			path = FBAnnotationClusteringSwift;
 			sourceTree = "<group>";
 		};
-		FC59A7E31ACD99BE009EFA30 /* Supporting Files */ = {
+		607FACD31AFB9204008FA782 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				FC59A7E41ACD99BE009EFA30 /* Info.plist */,
+				607FACD41AFB9204008FA782 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		FC59A7F81ACD99BE009EFA30 /* FBAnnotationClusteringSwiftTests */ = {
+		607FACE81AFB9204008FA782 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				FC59A7FB1ACD99BE009EFA30 /* FBAnnotationClusteringSwiftTests.swift */,
-				FC59A7F91ACD99BE009EFA30 /* Supporting Files */,
+				607FACEB1AFB9204008FA782 /* Tests.swift */,
+				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
-			path = FBAnnotationClusteringSwiftTests;
+			path = Tests;
 			sourceTree = "<group>";
 		};
-		FC59A7F91ACD99BE009EFA30 /* Supporting Files */ = {
+		607FACE91AFB9204008FA782 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				FC59A7FA1ACD99BE009EFA30 /* Info.plist */,
+				607FACEA1AFB9204008FA782 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		607FACF51AFB993E008FA782 /* Podspec Metadata */ = {
+			isa = PBXGroup;
+			children = (
+				8BFE2416CCF84B3F2AFDD15B /* FBAnnotationClusteringSwift.podspec */,
+				9FA0BD969C7743DC2F85985B /* README.md */,
+				7F27E8C19C5A405B5072D1D0 /* LICENSE */,
+			);
+			name = "Podspec Metadata";
+			sourceTree = "<group>";
+		};
+		A17357F97564DC02C3863207 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EAF4AFBA74BA75C0071EBDE1 /* Pods-FBAnnotationClusteringSwift_Example.debug.xcconfig */,
+				560BC1897FF87118C52FC29D /* Pods-FBAnnotationClusteringSwift_Example.release.xcconfig */,
+				CDF8B325F048A96548D5C596 /* Pods-FBAnnotationClusteringSwift_Tests.debug.xcconfig */,
+				CC0897C1FEBEFEF8FD6F4861 /* Pods-FBAnnotationClusteringSwift_Tests.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		FC59A7DF1ACD99BE009EFA30 /* FBAnnotationClusteringSwift */ = {
+		607FACCF1AFB9204008FA782 /* FBAnnotationClusteringSwift_Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FC59A7FF1ACD99BE009EFA30 /* Build configuration list for PBXNativeTarget "FBAnnotationClusteringSwift" */;
+			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "FBAnnotationClusteringSwift_Example" */;
 			buildPhases = (
-				FC59A7DC1ACD99BE009EFA30 /* Sources */,
-				FC59A7DD1ACD99BE009EFA30 /* Frameworks */,
-				FC59A7DE1ACD99BE009EFA30 /* Resources */,
+				34128A165E4D2FC900D9CFCB /* Check Pods Manifest.lock */,
+				607FACCC1AFB9204008FA782 /* Sources */,
+				607FACCD1AFB9204008FA782 /* Frameworks */,
+				607FACCE1AFB9204008FA782 /* Resources */,
+				55AAA810ECE3904E315C062D /* Embed Pods Frameworks */,
+				EAF114AD5514BD0BF7C307B0 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = FBAnnotationClusteringSwift;
+			name = FBAnnotationClusteringSwift_Example;
 			productName = FBAnnotationClusteringSwift;
-			productReference = FC59A7E01ACD99BE009EFA30 /* FBAnnotationClusteringSwift.app */;
+			productReference = 607FACD01AFB9204008FA782 /* FBAnnotationClusteringSwift_Example.app */;
 			productType = "com.apple.product-type.application";
 		};
-		FC59A7F41ACD99BE009EFA30 /* FBAnnotationClusteringSwiftTests */ = {
+		607FACE41AFB9204008FA782 /* FBAnnotationClusteringSwift_Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FC59A8021ACD99BE009EFA30 /* Build configuration list for PBXNativeTarget "FBAnnotationClusteringSwiftTests" */;
+			buildConfigurationList = 607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "FBAnnotationClusteringSwift_Tests" */;
 			buildPhases = (
-				FC59A7F11ACD99BE009EFA30 /* Sources */,
-				FC59A7F21ACD99BE009EFA30 /* Frameworks */,
-				FC59A7F31ACD99BE009EFA30 /* Resources */,
+				10C007E53DEAFD417CE2125A /* Check Pods Manifest.lock */,
+				607FACE11AFB9204008FA782 /* Sources */,
+				607FACE21AFB9204008FA782 /* Frameworks */,
+				607FACE31AFB9204008FA782 /* Resources */,
+				656DA404C6FB425740BCE9AE /* Embed Pods Frameworks */,
+				76A69178054C3260E032873A /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				FC59A7F71ACD99BE009EFA30 /* PBXTargetDependency */,
+				607FACE71AFB9204008FA782 /* PBXTargetDependency */,
 			);
-			name = FBAnnotationClusteringSwiftTests;
-			productName = FBAnnotationClusteringSwiftTests;
-			productReference = FC59A7F51ACD99BE009EFA30 /* FBAnnotationClusteringSwiftTests.xctest */;
+			name = FBAnnotationClusteringSwift_Tests;
+			productName = Tests;
+			productReference = 607FACE51AFB9204008FA782 /* FBAnnotationClusteringSwift_Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		FC59A7D81ACD99BE009EFA30 /* Project object */ = {
+		607FACC81AFB9204008FA782 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftMigration = 0700;
-				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0700;
-				ORGANIZATIONNAME = "Robert Chen";
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
-					FC59A7DF1ACD99BE009EFA30 = {
-						CreatedOnToolsVersion = 6.2;
+					607FACCF1AFB9204008FA782 = {
+						CreatedOnToolsVersion = 6.3.1;
 					};
-					FC59A7F41ACD99BE009EFA30 = {
-						CreatedOnToolsVersion = 6.2;
-						TestTargetID = FC59A7DF1ACD99BE009EFA30;
+					607FACE41AFB9204008FA782 = {
+						CreatedOnToolsVersion = 6.3.1;
+						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
 				};
 			};
-			buildConfigurationList = FC59A7DB1ACD99BE009EFA30 /* Build configuration list for PBXProject "FBAnnotationClusteringSwift" */;
+			buildConfigurationList = 607FACCB1AFB9204008FA782 /* Build configuration list for PBXProject "FBAnnotationClusteringSwift" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -178,29 +230,29 @@
 				en,
 				Base,
 			);
-			mainGroup = FC59A7D71ACD99BE009EFA30;
-			productRefGroup = FC59A7E11ACD99BE009EFA30 /* Products */;
+			mainGroup = 607FACC71AFB9204008FA782;
+			productRefGroup = 607FACD11AFB9204008FA782 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				FC59A7DF1ACD99BE009EFA30 /* FBAnnotationClusteringSwift */,
-				FC59A7F41ACD99BE009EFA30 /* FBAnnotationClusteringSwiftTests */,
+				607FACCF1AFB9204008FA782 /* FBAnnotationClusteringSwift_Example */,
+				607FACE41AFB9204008FA782 /* FBAnnotationClusteringSwift_Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		FC59A7DE1ACD99BE009EFA30 /* Resources */ = {
+		607FACCE1AFB9204008FA782 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC59A7EB1ACD99BE009EFA30 /* Main.storyboard in Resources */,
-				FC59A7F01ACD99BE009EFA30 /* LaunchScreen.xib in Resources */,
-				FC59A7ED1ACD99BE009EFA30 /* Images.xcassets in Resources */,
+				FE07C7E91C6E42EE00B219A5 /* Images.xcassets in Resources */,
+				FE12259B1C6E313400A5E91D /* Main.storyboard in Resources */,
+				FE12259A1C6E313400A5E91D /* LaunchScreen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FC59A7F31ACD99BE009EFA30 /* Resources */ = {
+		607FACE31AFB9204008FA782 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -209,55 +261,148 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		10C007E53DEAFD417CE2125A /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		34128A165E4D2FC900D9CFCB /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		55AAA810ECE3904E315C062D /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FBAnnotationClusteringSwift_Example/Pods-FBAnnotationClusteringSwift_Example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		656DA404C6FB425740BCE9AE /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FBAnnotationClusteringSwift_Tests/Pods-FBAnnotationClusteringSwift_Tests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		76A69178054C3260E032873A /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FBAnnotationClusteringSwift_Tests/Pods-FBAnnotationClusteringSwift_Tests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EAF114AD5514BD0BF7C307B0 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FBAnnotationClusteringSwift_Example/Pods-FBAnnotationClusteringSwift_Example-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		FC59A7DC1ACD99BE009EFA30 /* Sources */ = {
+		607FACCC1AFB9204008FA782 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC59A7E81ACD99BE009EFA30 /* FBViewController.swift in Sources */,
-				FC59A7E61ACD99BE009EFA30 /* AppDelegate.swift in Sources */,
+				FE1225941C6E312200A5E91D /* FBViewController.swift in Sources */,
+				FE1225931C6E312200A5E91D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FC59A7F11ACD99BE009EFA30 /* Sources */ = {
+		607FACE11AFB9204008FA782 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC59A7FC1ACD99BE009EFA30 /* FBAnnotationClusteringSwiftTests.swift in Sources */,
+				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		FC59A7F71ACD99BE009EFA30 /* PBXTargetDependency */ = {
+		607FACE71AFB9204008FA782 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = FC59A7DF1ACD99BE009EFA30 /* FBAnnotationClusteringSwift */;
-			targetProxy = FC59A7F61ACD99BE009EFA30 /* PBXContainerItemProxy */;
+			target = 607FACCF1AFB9204008FA782 /* FBAnnotationClusteringSwift_Example */;
+			targetProxy = 607FACE61AFB9204008FA782 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		FC59A7E91ACD99BE009EFA30 /* Main.storyboard */ = {
+		FE1225961C6E313400A5E91D /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				FC59A7EA1ACD99BE009EFA30 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		FC59A7EE1ACD99BE009EFA30 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FC59A7EF1ACD99BE009EFA30 /* Base */,
+				FE1225971C6E313400A5E91D /* Base */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		FE1225981C6E313400A5E91D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FE1225991C6E313400A5E91D /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		FC59A7FD1ACD99BE009EFA30 /* Debug */ = {
+		607FACED1AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -276,10 +421,12 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -297,11 +444,10 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		FC59A7FE1ACD99BE009EFA30 /* Release */ = {
+		607FACEE1AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -320,9 +466,11 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -332,37 +480,42 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		FC59A8001ACD99BE009EFA30 /* Debug */ = {
+		607FACF01AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EAF4AFBA74BA75C0071EBDE1 /* Pods-FBAnnotationClusteringSwift_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = FBAnnotationClusteringSwift/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.rob.$(PRODUCT_NAME:rfc1034identifier)";
+				MODULE_NAME = ExampleApp;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		FC59A8011ACD99BE009EFA30 /* Release */ = {
+		607FACF11AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 560BC1897FF87118C52FC29D /* Pods-FBAnnotationClusteringSwift_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = FBAnnotationClusteringSwift/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.rob.$(PRODUCT_NAME:rfc1034identifier)";
+				MODULE_NAME = ExampleApp;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
-		FC59A8031ACD99BE009EFA30 /* Debug */ = {
+		607FACF31AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CDF8B325F048A96548D5C596 /* Pods-FBAnnotationClusteringSwift_Tests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -373,61 +526,62 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = FBAnnotationClusteringSwiftTests/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.rob.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FBAnnotationClusteringSwift.app/FBAnnotationClusteringSwift";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FBAnnotationClusteringSwift_Example.app/FBAnnotationClusteringSwift_Example";
 			};
 			name = Debug;
 		};
-		FC59A8041ACD99BE009EFA30 /* Release */ = {
+		607FACF41AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CC0897C1FEBEFEF8FD6F4861 /* Pods-FBAnnotationClusteringSwift_Tests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = FBAnnotationClusteringSwiftTests/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.rob.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FBAnnotationClusteringSwift.app/FBAnnotationClusteringSwift";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FBAnnotationClusteringSwift_Example.app/FBAnnotationClusteringSwift_Example";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		FC59A7DB1ACD99BE009EFA30 /* Build configuration list for PBXProject "FBAnnotationClusteringSwift" */ = {
+		607FACCB1AFB9204008FA782 /* Build configuration list for PBXProject "FBAnnotationClusteringSwift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FC59A7FD1ACD99BE009EFA30 /* Debug */,
-				FC59A7FE1ACD99BE009EFA30 /* Release */,
+				607FACED1AFB9204008FA782 /* Debug */,
+				607FACEE1AFB9204008FA782 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FC59A7FF1ACD99BE009EFA30 /* Build configuration list for PBXNativeTarget "FBAnnotationClusteringSwift" */ = {
+		607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "FBAnnotationClusteringSwift_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FC59A8001ACD99BE009EFA30 /* Debug */,
-				FC59A8011ACD99BE009EFA30 /* Release */,
+				607FACF01AFB9204008FA782 /* Debug */,
+				607FACF11AFB9204008FA782 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FC59A8021ACD99BE009EFA30 /* Build configuration list for PBXNativeTarget "FBAnnotationClusteringSwiftTests" */ = {
+		607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "FBAnnotationClusteringSwift_Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FC59A8031ACD99BE009EFA30 /* Debug */,
-				FC59A8041ACD99BE009EFA30 /* Release */,
+				607FACF31AFB9204008FA782 /* Debug */,
+				607FACF41AFB9204008FA782 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = FC59A7D81ACD99BE009EFA30 /* Project object */;
+	rootObject = 607FACC81AFB9204008FA782 /* Project object */;
 }

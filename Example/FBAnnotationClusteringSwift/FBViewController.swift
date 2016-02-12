@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import FBAnnotationClusteringSwift
 
 class FBViewController: UIViewController {
 
@@ -86,7 +87,7 @@ extension FBViewController : MKMapViewDelegate {
             
             reuseId = "Cluster"
             var clusterView = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseId)
-            clusterView = FBAnnotationClusterView(annotation: annotation, reuseIdentifier: reuseId)
+            clusterView = FBAnnotationClusterView(annotation: annotation, reuseIdentifier: reuseId, options: nil)
 
             return clusterView
             

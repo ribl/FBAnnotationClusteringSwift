@@ -9,36 +9,36 @@
 import Foundation
 import MapKit
 
-protocol FBClusteringManagerDelegate {
+public protocol FBClusteringManagerDelegate {
     
     func cellSizeFactorForCoordinator(coordinator:FBClusteringManager) -> CGFloat
     
 }
 
-class FBClusteringManager : NSObject {
+public class FBClusteringManager : NSObject {
     
-    var delegate:FBClusteringManagerDelegate? = nil
+    public var delegate:FBClusteringManagerDelegate? = nil
     
     var tree:FBQuadTree? = nil
     
     var lock:NSRecursiveLock = NSRecursiveLock()
     
         
-    override init(){
+    public override init(){
         super.init()
     }
     
-    init(annotations: [MKAnnotation]){
+    public init(annotations: [MKAnnotation]){
         super.init()
         addAnnotations(annotations)
     }
     
-    func setAnnotations(annotations:[MKAnnotation]){
+    public func setAnnotations(annotations:[MKAnnotation]){
         tree = nil
         addAnnotations(annotations)
     }
     
-    func addAnnotations(annotations:[MKAnnotation]){
+    public func addAnnotations(annotations:[MKAnnotation]){
         if tree == nil {
             tree = FBQuadTree()
         }
@@ -50,7 +50,7 @@ class FBClusteringManager : NSObject {
         lock.unlock()
     }
     
-    func clusteredAnnotationsWithinMapRect(rect:MKMapRect, withZoomScale zoomScale:Double) -> [MKAnnotation]{
+    public func clusteredAnnotationsWithinMapRect(rect:MKMapRect, withZoomScale zoomScale:Double) -> [MKAnnotation]{
         guard !zoomScale.isInfinite else { return [] }
         
         let cellSize:CGFloat = FBClusteringManager.FBCellSizeForZoomScale(MKZoomScale(zoomScale))
@@ -124,7 +124,7 @@ class FBClusteringManager : NSObject {
         return clusteredAnnotations
     }
     
-    func allAnnotations() -> [MKAnnotation] {
+    public func allAnnotations() -> [MKAnnotation] {
         
         var annotations = [MKAnnotation]()
         
@@ -137,7 +137,7 @@ class FBClusteringManager : NSObject {
         return annotations
     }
     
-    func displayAnnotations(annotations: [MKAnnotation], onMapView mapView:MKMapView){
+    public func displayAnnotations(annotations: [MKAnnotation], onMapView mapView:MKMapView){
         
         dispatch_async(dispatch_get_main_queue())  {
 
@@ -162,7 +162,7 @@ class FBClusteringManager : NSObject {
         
     }
     
-    class func FBZoomScaleToZoomLevel(scale:MKZoomScale) -> Int{
+    public class func FBZoomScaleToZoomLevel(scale:MKZoomScale) -> Int{
         let totalTilesAtMaxZoom:Double = MKMapSizeWorld.width / 256.0
         let zoomLevelAtMaxZoom:Int = Int(log2(totalTilesAtMaxZoom))
         let floorLog2ScaleFloat = floor(log2f(Float(scale))) + 0.5
@@ -172,7 +172,7 @@ class FBClusteringManager : NSObject {
         return zoomLevel;
     }
     
-    class func FBCellSizeForZoomScale(zoomScale:MKZoomScale) -> CGFloat {
+    public class func FBCellSizeForZoomScale(zoomScale:MKZoomScale) -> CGFloat {
         
         let zoomLevel:Int = FBClusteringManager.FBZoomScaleToZoomLevel(zoomScale)
         

@@ -9,7 +9,7 @@
 import Foundation
 import MapKit
 
-class FBQuadTreeNode : NSObject {
+public class FBQuadTreeNode : NSObject {
     
     var boundingBox:FBBoundingBox? = nil
     

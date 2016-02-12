@@ -9,7 +9,7 @@
 import Foundation
 import MapKit
 
-class FBQuadTree : NSObject {
+public class FBQuadTree : NSObject {
     
     var rootNode:FBQuadTreeNode? = nil
     
