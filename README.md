@@ -14,11 +14,12 @@ Map clustering is a common enough map feature in modern apps.  When I couldn't f
 ```
 pod 'FBAnnotationClusteringSwift'
 ```
+and in class where do you need add this
 
 ```
 import FBAnnotationClusteringSwift
 ```
-in class where do you need
+
 
 
 ####Manually
