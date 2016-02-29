@@ -20,7 +20,7 @@ Swift translation of FB Annotation Clustering, which clusters pins on the map fo
   s.author           = { "Giuseppe Russo" => "freemiumdev@outlook.it" }
   s.source           = { :git => "https://github.com/freemiumdev/FBAnnotationClusteringSwift.git", :tag => s.version}
 
-  s.platform     = :ios, '9.0'
+  s.platform     = :ios, '8.0'
   s.requires_arc = true
 
   s.source_files = 'Pod/Classes/**/*'
