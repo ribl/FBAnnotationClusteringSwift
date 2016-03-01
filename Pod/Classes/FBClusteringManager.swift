@@ -108,6 +108,8 @@ public class FBClusteringManager : NSObject {
                     cluster.coordinate = coordinate
                     cluster.annotations = annotations
                     clusteredAnnotations.append(cluster)
+                } else {
+                    clusteredAnnotations += annotations
                 }
             }
             
