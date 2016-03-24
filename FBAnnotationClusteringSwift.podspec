@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "FBAnnotationClusteringSwift"
-  s.version          = "1.0.1"
+  s.version          = "1.0.0"
   s.summary          = "This is a Swift translation of FBAnnotationClustering. Aggregates map pins into a single numbered cluster."
 
   s.description      = <<-DESC
@@ -20,7 +20,7 @@ Swift translation of FB Annotation Clustering, which clusters pins on the map fo
   s.author           = { "Giuseppe Russo" => "freemiumdev@outlook.it" }
   s.source           = { :git => "https://github.com/freemiumdev/FBAnnotationClusteringSwift.git", :tag => s.version}
 
-  s.platform     = :ios, '8.0'
+  s.platform     = :ios, '9.0'
   s.requires_arc = true
 
   s.source_files = 'Pod/Classes/**/*'
