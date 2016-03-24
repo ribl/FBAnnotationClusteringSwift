@@ -112,3 +112,12 @@ extension ViewController: MKMapViewDelegate {
 
 For image's cluster
 You can use those provided by me, or you can pass the name of the image you have in your project. Remember you will need 3 different images depending on the cluster size
+
+## Run Example
+If you want run example, before to open Xcode the first time,  open Terminal in Example folder and run the command:
+
+```
+pod  install
+``` 
+
+After than open the .xworkspace file generated.
