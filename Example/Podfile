@@ -1,5 +1,0 @@
-use_frameworks!
-
-target 'FBAnnotationClusteringSwift_Example' do
-	pod 'FBAnnotationClusteringSwift', :path => "../"
-end
