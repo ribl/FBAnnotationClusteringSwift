@@ -136,27 +136,54 @@ public class FBClusteringManager : NSObject {
     
     public func displayAnnotations(annotations: [MKAnnotation], onMapView mapView:MKMapView){
         
-        dispatch_async(dispatch_get_main_queue())  {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), { () -> Void in
             
-            let before = NSMutableSet(array: mapView.annotations)
-            before.removeObject(mapView.userLocation)
-            let after = NSSet(array: annotations)
-            let toKeep = NSMutableSet(set: before)
-            toKeep.intersectSet(after as Set<NSObject>)
-            let toAdd = NSMutableSet(set: after)
-            toAdd.minusSet(toKeep as Set<NSObject>)
-            let toRemove = NSMutableSet(set: before)
-            toRemove.minusSet(after as Set<NSObject>)
+            let toAdd       = NSMutableSet()
+            let toRemove    = NSMutableSet()
             
-            if let toAddAnnotations = toAdd.allObjects as? [MKAnnotation]{
-                mapView.addAnnotations(toAddAnnotations)
+            for (_, mapAnnotation) in mapView.annotations.enumerate()
+            {
+                if annotations.filter({ (newAnnotation) -> Bool in
+                    
+                    switch (newAnnotation, mapAnnotation)
+                    {
+                    case (let lhs as FBAnnotationCluster, let rhs as FBAnnotationCluster):  return self.compareFBAnnotationCluster(lhs, rhs: rhs)
+                    case (let lhs as FBAnnotation, let rhs as FBAnnotation):                return self.compareFBAnnotation(lhs, rhs: rhs)
+                    case (is MKUserLocation, is MKUserLocation):                            return true
+                    default:                                                                return false
+                    }
+                }).count == 0 {
+                    toRemove.addObject(mapAnnotation)
+                }
             }
             
-            if let removeAnnotations = toRemove.allObjects as? [MKAnnotation]{
-                mapView.removeAnnotations(removeAnnotations)
+            for (_, newAnnotation) in annotations.enumerate()
+            {
+                if mapView.annotations.filter({ (mapAnnotation) -> Bool in
+                    
+                    switch (newAnnotation, mapAnnotation)
+                    {
+                    case (let lhs as FBAnnotationCluster, let rhs as FBAnnotationCluster):  return self.compareFBAnnotationCluster(lhs, rhs: rhs)
+                    case (let lhs as FBAnnotation, let rhs as FBAnnotation):                return self.compareFBAnnotation(lhs, rhs: rhs)
+                    case (is MKUserLocation, is MKUserLocation):                            return true
+                    default:                                                                return false
+                    }
+                }).count == 0 {
+                    toAdd.addObject(newAnnotation)
+                }
             }
-        }
-        
+            
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                
+                if let toAddAnnotations = toAdd.allObjects as? [MKAnnotation]{
+                    mapView.addAnnotations(toAddAnnotations)
+                }
+                
+                if let removeAnnotations = toRemove.allObjects as? [MKAnnotation]{
+                    mapView.removeAnnotations(removeAnnotations)
+                }
+            })
+        })
     }
     
     public class func FBZoomScaleToZoomLevel(scale:MKZoomScale) -> Int{
@@ -196,4 +223,18 @@ public class FBClusteringManager : NSObject {
         
     }
     
+    
+    // MARK: - Compare helper
+    
+    private func compareFBAnnotation(lhs: FBAnnotation, rhs: FBAnnotation) -> Bool {
+        return (lhs.coordinate.latitude == rhs.coordinate.latitude &&
+            lhs.coordinate.longitude == rhs.coordinate.longitude &&
+            lhs.title == rhs.title)
+    }
+    
+    private func compareFBAnnotationCluster(lhs: FBAnnotationCluster, rhs: FBAnnotationCluster) -> Bool {
+        return (lhs.coordinate.latitude == rhs.coordinate.latitude &&
+            lhs.coordinate.longitude == rhs.coordinate.longitude &&
+            lhs.annotations.count == rhs.annotations.count)
+    }
 }
