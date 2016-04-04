@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "FBAnnotationClusteringSwift"
-  s.version          = "1.0.1"
+  s.version          = "1.0.4"
   s.summary          = "This is a Swift translation of FBAnnotationClustering. Aggregates map pins into a single numbered cluster."
 
   s.description      = <<-DESC

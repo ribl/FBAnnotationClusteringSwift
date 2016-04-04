@@ -34,7 +34,7 @@ public class FBQuadTree : NSObject {
         
         if node.count < nodeCapacity {
             node.annotations.append(annotation)
-            node.count++
+            node.count += 1
             return true
         }
         
