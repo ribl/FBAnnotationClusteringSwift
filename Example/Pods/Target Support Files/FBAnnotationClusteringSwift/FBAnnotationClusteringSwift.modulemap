@@ -1,0 +1,6 @@
+framework module FBAnnotationClusteringSwift {
+  umbrella header "FBAnnotationClusteringSwift-umbrella.h"
+
+  export *
+  module * { export * }
+}
