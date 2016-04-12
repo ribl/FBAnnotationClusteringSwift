@@ -10,6 +10,10 @@ import UIKit
 import MapKit
 import FBAnnotationClusteringSwift
 
+
+ /// Try to put annotations fit in current map rect.  Map should zoom out to span annotations
+
+
 class FBViewController: UIViewController {
 
     @IBOutlet weak var mapView: MKMapView!
@@ -42,7 +46,7 @@ class FBViewController: UIViewController {
         var array:[FBAnnotation] = []
         for _ in 0...count {
             let a:FBAnnotation = FBAnnotation()
-            a.coordinate = CLLocationCoordinate2D(latitude: drand48() * 40 - 20, longitude: drand48() * 80 - 40 )
+            a.coordinate = CLLocationCoordinate2D(latitude: drand48() * 40 - 2, longitude: drand48() * 80 - 4 )
             array.append(a)
         }
         return array
@@ -63,19 +67,8 @@ extension FBViewController : MKMapViewDelegate {
     
     func mapView(mapView: MKMapView, regionDidChangeAnimated animated: Bool){
         
-        NSOperationQueue().addOperationWithBlock({
+    
         
-            let mapBoundsWidth = Double(self.mapView.bounds.size.width)
-            
-            let mapRectWidth:Double = self.mapView.visibleMapRect.size.width
-            
-            let scale:Double = mapBoundsWidth / mapRectWidth
-            
-            let annotationArray = self.clusteringManager.clusteredAnnotationsWithinMapRect(self.mapView.visibleMapRect, withZoomScale:scale)
-            
-            self.clusteringManager.displayAnnotations(annotationArray, onMapView:self.mapView)
-
-        })
 
     }
     
