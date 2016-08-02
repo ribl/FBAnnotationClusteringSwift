@@ -140,7 +140,7 @@ public class FBClusteringManager : NSObject {
             var toRemove = NSMutableSet(set: before)
             toRemove.minusSet(after as Set<NSObject>)
             
-            let annotationsOnlyPredicate = NSPredicate(format: "SELF isKindOfClass:%@", argumentArray: [FBAnnotationClusterView.self])
+            let annotationsOnlyPredicate = NSPredicate(format: "SELF isKindOfClass:%@", argumentArray: [FBAnnotationCluster.self])
             toRemove.filterUsingPredicate(annotationsOnlyPredicate)
        
             if let toAddAnnotations = toAdd.allObjects as? [MKAnnotation]{
