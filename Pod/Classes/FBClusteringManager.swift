@@ -137,9 +137,12 @@ public class FBClusteringManager : NSObject {
             toKeep.intersectSet(after as Set<NSObject>)
             let toAdd = NSMutableSet(set: after)
             toAdd.minusSet(toKeep as Set<NSObject>)
-            let toRemove = NSMutableSet(set: before)
+            var toRemove = NSMutableSet(set: before)
             toRemove.minusSet(after as Set<NSObject>)
             
+            let annotationsOnlyPredicate = NSPredicate(format: "SELF isKindOfClass:%@", argumentArray: [FBAnnotationClusterView.self])
+            toRemove.filterUsingPredicate(annotationsOnlyPredicate)
+       
             if let toAddAnnotations = toAdd.allObjects as? [MKAnnotation]{
                 mapView.addAnnotations(toAddAnnotations)
             }
