@@ -38,7 +38,7 @@ class FBViewController: UIViewController {
 
     // MARK: - Utility
     
-    func randomLocationsWithCount(count:Int) -> [FBAnnotation] {
+    func randomLocationsWithCount(_ count:Int) -> [FBAnnotation] {
         var array:[FBAnnotation] = []
         for _ in 0...count {
             let a:FBAnnotation = FBAnnotation()
@@ -52,7 +52,7 @@ class FBViewController: UIViewController {
 
 extension FBViewController : FBClusteringManagerDelegate {
  
-    func cellSizeFactorForCoordinator(coordinator:FBClusteringManager) -> CGFloat{
+    func cellSizeFactorForCoordinator(_ coordinator:FBClusteringManager) -> CGFloat{
         return 1.0
     }
     
@@ -61,9 +61,9 @@ extension FBViewController : FBClusteringManagerDelegate {
 
 extension FBViewController : MKMapViewDelegate {
     
-    func mapView(mapView: MKMapView, regionDidChangeAnimated animated: Bool){
+    func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool){
         
-        NSOperationQueue().addOperationWithBlock({
+        OperationQueue().addOperation({
         
             let mapBoundsWidth = Double(self.mapView.bounds.size.width)
             
@@ -79,14 +79,14 @@ extension FBViewController : MKMapViewDelegate {
 
     }
     
-    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         
         var reuseId = ""
         
-        if annotation.isKindOfClass(FBAnnotationCluster) {
+        if annotation is FBAnnotationCluster {
             
             reuseId = "Cluster"
-            var clusterView = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseId)
+            var clusterView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId)
             clusterView = FBAnnotationClusterView(annotation: annotation, reuseIdentifier: reuseId, options: nil)
 
             return clusterView
@@ -94,11 +94,11 @@ extension FBViewController : MKMapViewDelegate {
         } else {
         
             reuseId = "Pin"
-            var pinView = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseId) as? MKPinAnnotationView
+            var pinView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId) as? MKPinAnnotationView
             pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
             
             
-            pinView!.pinTintColor = UIColor.greenColor()
+            pinView!.pinTintColor = UIColor.green
             
             return pinView
         }

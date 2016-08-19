@@ -6,9 +6,11 @@ DEPENDENCIES:
 
 EXTERNAL SOURCES:
   FBAnnotationClusteringSwift:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
   FBAnnotationClusteringSwift: 7ef2c863c806942a1c03add72cde1e9c1872534d
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: 8b7fdd688cefe19014e567820a72d4e53e16c8da
+
+COCOAPODS: 1.0.1
