@@ -135,7 +135,7 @@ public class FBClusteringManager: NSObject {
             toKeep.intersect(after as Set<NSObject>)
             let toAdd = NSMutableSet(set: after)
             toAdd.minus(toKeep as Set<NSObject>)
-            var toRemove = NSMutableSet(set: before)
+            let toRemove = NSMutableSet(set: before)
             toRemove.minus(after as Set<NSObject>)
             
             let annotationsOnlyPredicate = NSPredicate(format: "SELF isKindOfClass:%@", argumentArray: [FBAnnotationCluster.self])
