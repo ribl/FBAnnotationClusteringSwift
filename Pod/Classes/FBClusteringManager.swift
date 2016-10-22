@@ -9,185 +9,144 @@
 import Foundation
 import MapKit
 
-public protocol FBClusteringManagerDelegate {
-    func cellSizeFactorForCoordinator(_ coordinator: FBClusteringManager) -> CGFloat
+public protocol FBClusteringManagerDelegate: NSObjectProtocol {
+    func cellSizeFactor(forCoordinator coordinator: FBClusteringManager) -> CGFloat
 }
 
-public class FBClusteringManager: NSObject {
-    
-    public var delegate: FBClusteringManagerDelegate? = nil
-    
-    var tree: FBQuadTree? = nil
-    
-    var lock: NSRecursiveLock = NSRecursiveLock()
-    
-    public var maxZoomLevel = 19
-    
-    public override init() {
-        super.init()
-    }
-    
+public class FBClusteringManager {
+
+    public weak var delegate: FBClusteringManagerDelegate? = nil
+
+	private var backingTree: FBQuadTree?
+	private var tree: FBQuadTree? {
+		set {
+			backingTree = newValue
+		}
+		get {
+			if backingTree == nil {
+				backingTree = FBQuadTree()
+			}
+			return backingTree
+		}
+	}
+    private let lock = NSRecursiveLock()
+
+	public init() { }
+
     public init(annotations: [MKAnnotation]) {
-        super.init()
-        addAnnotations(annotations)
+        add(annotations: annotations)
     }
-    
-    public func setAnnotations(_ annotations: [MKAnnotation]) {
-        tree = nil
-        addAnnotations(annotations)
-    }
-    
-    public func addAnnotations(_ annotations: [MKAnnotation]) {
-        if tree == nil {
-            tree = FBQuadTree()
-        }
-        
+
+	public func add(annotations:[MKAnnotation]){
         lock.lock()
         for annotation in annotations {
-            tree!.insertAnnotation(annotation)
+			tree?.insert(annotation: annotation)
         }
         lock.unlock()
     }
-    
-    public func clusteredAnnotationsWithinMapRect(_ rect: MKMapRect, withZoomScale zoomScale: Double) -> [MKAnnotation] {
+
+	public func removeAll() {
+		tree = nil
+	}
+
+	public func replace(annotations:[MKAnnotation]){
+		removeAll()
+		add(annotations: annotations)
+	}
+
+	public func allAnnotations() -> [MKAnnotation] {
+		var annotations = [MKAnnotation]()
+		lock.lock()
+		tree?.enumerateAnnotationsUsingBlock(){ obj in
+			annotations.append(obj)
+		}
+		lock.unlock()
+		return annotations
+	}
+
+    public func clusteredAnnotations(withinMapRect rect:MKMapRect, zoomScale: Double) -> [MKAnnotation] {
         guard !zoomScale.isInfinite else { return [] }
         
-        let zoomLevel   = FBClusteringManager.FBZoomScaleToZoomLevel(MKZoomScale(zoomScale))
-        let cellSize    = FBClusteringManager.FBCellSizeForZoomLevel(zoomLevel)
+        var cellSize = ZoomLevel(MKZoomScale(zoomScale)).cellSize()
+        if let delegate = delegate, delegate.responds(to: Selector("cellSizeFactorForCoordinator:")) {
+			cellSize *= delegate.cellSizeFactor(forCoordinator: self)
+        }
+
+        let scaleFactor = zoomScale / Double(cellSize)
         
-        let scaleFactor: Double = zoomScale / Double(cellSize)
-        
-        let minX: Int = Int(floor(MKMapRectGetMinX(rect) * scaleFactor))
-        let maxX: Int = Int(floor(MKMapRectGetMaxX(rect) * scaleFactor))
-        let minY: Int = Int(floor(MKMapRectGetMinY(rect) * scaleFactor))
-        let maxY: Int = Int(floor(MKMapRectGetMaxY(rect) * scaleFactor))
+        let minX = Int(floor(MKMapRectGetMinX(rect) * scaleFactor))
+        let maxX = Int(floor(MKMapRectGetMaxX(rect) * scaleFactor))
+        let minY = Int(floor(MKMapRectGetMinY(rect) * scaleFactor))
+        let maxY = Int(floor(MKMapRectGetMaxY(rect) * scaleFactor))
         
         var clusteredAnnotations = [MKAnnotation]()
         
         lock.lock()
         
         for i in minX...maxX {
-            
             for j in minY...maxY {
-                
-                let mapPoint = MKMapPoint(x: Double(i)/scaleFactor, y: Double(j)/scaleFactor)
-                
-                let mapSize = MKMapSize(width: 1.0/scaleFactor, height: 1.0/scaleFactor)
-                
+
+                let mapPoint = MKMapPoint(x: Double(i) / scaleFactor, y: Double(j) / scaleFactor)
+                let mapSize = MKMapSize(width: 1.0 / scaleFactor, height: 1.0 / scaleFactor)
                 let mapRect = MKMapRect(origin: mapPoint, size: mapSize)
-                let mapBox: FBBoundingBox = FBQuadTreeNode.FBBoundingBoxForMapRect(mapRect)
+                let mapBox = FBBoundingBox(mapRect: mapRect)
                 
                 var totalLatitude: Double = 0
                 var totalLongitude: Double = 0
                 
                 var annotations = [MKAnnotation]()
                 
-                tree?.enumerateAnnotationsInBox(mapBox) { obj in
+				tree?.enumerateAnnotations(inBox: mapBox) { obj in
                     totalLatitude += obj.coordinate.latitude
                     totalLongitude += obj.coordinate.longitude
                     annotations.append(obj)
                 }
-                
-                let count = annotations.count
-                
-                if count == 1 || zoomLevel >= self.maxZoomLevel {
-                    clusteredAnnotations += annotations
-                } else if count > 1 {
-                    let coordinate = CLLocationCoordinate2D(
-                        latitude: CLLocationDegrees(totalLatitude)/CLLocationDegrees(count),
-                        longitude: CLLocationDegrees(totalLongitude)/CLLocationDegrees(count)
-                    )
-                    let cluster = FBAnnotationCluster()
-                    cluster.coordinate = coordinate
-                    cluster.annotations = annotations
-                    clusteredAnnotations.append(cluster)
-                }
+
+				let count = annotations.count
+
+				switch count {
+				case 0: break
+				case 1:
+					clusteredAnnotations += annotations
+				default:
+					let coordinate = CLLocationCoordinate2D(
+						latitude: CLLocationDegrees(totalLatitude)/CLLocationDegrees(count),
+						longitude: CLLocationDegrees(totalLongitude)/CLLocationDegrees(count)
+					)
+					let cluster = FBAnnotationCluster()
+					cluster.coordinate = coordinate
+					cluster.annotations = annotations
+					clusteredAnnotations.append(cluster)
+				}
             }
         }
-        
         
         lock.unlock()
         
         return clusteredAnnotations
     }
     
-    public func allAnnotations() -> [MKAnnotation] {
-        
-        var annotations = [MKAnnotation]()
-        
-        lock.lock()
-        tree?.enumerateAnnotationsUsingBlock() { obj in
-            annotations.append(obj)
-        }
-        lock.unlock()
-        
-        return annotations
-    }
-    
-    public func displayAnnotations(_ annotations: [MKAnnotation], onMapView mapView: MKMapView) {
-        
-        DispatchQueue.main.async {
-            
-            let before = NSMutableSet(array: mapView.annotations)
-            before.remove(mapView.userLocation)
-            let after = NSSet(array: annotations)
-            let toKeep = NSMutableSet(set: before)
-            toKeep.intersect(after as Set<NSObject>)
-            let toAdd = NSMutableSet(set: after)
-            toAdd.minus(toKeep as Set<NSObject>)
-            let toRemove = NSMutableSet(set: before)
-            toRemove.minus(after as Set<NSObject>)
-            
-            let annotationsOnlyPredicate = NSPredicate(format: "SELF isKindOfClass:%@", argumentArray: [FBAnnotationCluster.self])
-            toRemove.filter(using: annotationsOnlyPredicate)
-       
-            if let toAddAnnotations = toAdd.allObjects as? [MKAnnotation] {
-                mapView.addAnnotations(toAddAnnotations)
-            }
-            
-            if let removeAnnotations = toRemove.allObjects as? [MKAnnotation] {
-                mapView.removeAnnotations(removeAnnotations)
-            }
-        }
-    }
-    
-    public class func FBZoomScaleToZoomLevel(_ scale: MKZoomScale) -> Int {
-        let totalTilesAtMaxZoom: Double = MKMapSizeWorld.width / 256.0
-        let zoomLevelAtMaxZoom: Int = Int(log2(totalTilesAtMaxZoom))
-        let floorLog2ScaleFloat = floor(log2f(Float(scale))) + 0.5
-        guard !floorLog2ScaleFloat.isInfinite else { return floorLog2ScaleFloat.sign == .plus ? 0 : 19 }
-        let sum: Int = zoomLevelAtMaxZoom + Int(floorLog2ScaleFloat)
-        let zoomLevel: Int = max(0, sum)
-        return zoomLevel
-    }
-    
-    public class func FBCellSizeForZoomLevel(_ zoomLevel: Int) -> CGFloat {
-        
-        switch zoomLevel {
-        case 13:
-            return 64
-        case 14:
-            return 64
-        case 15:
-            return 64
-        case 16:
-            return 32
-        case 17:
-            return 32
-        case 18:
-            return 32
-        case 18 ..< Int.max:
-            return 16
-            
-        default:
-            // less than 13 zoom level
-            return 88
-        }
-    }
-    
-    public class func FBCellSizeForZoomScale(_ zoomScale: MKZoomScale) -> CGFloat {
-        
-        let zoomLevel = FBClusteringManager.FBZoomScaleToZoomLevel(zoomScale)
-        return FBClusteringManager.FBCellSizeForZoomLevel(zoomLevel)
+    public func display(annotations: [MKAnnotation], onMapView mapView:MKMapView){
+		let before = NSMutableSet(array: mapView.annotations)
+		before.remove(mapView.userLocation)
+
+		let after = NSSet(array: annotations)
+
+		let toKeep = NSMutableSet(set: before)
+		toKeep.intersect(after as Set<NSObject>)
+
+		let toAdd = NSMutableSet(set: after)
+		toAdd.minus(toKeep as Set<NSObject>)
+
+		let toRemove = NSMutableSet(set: before)
+		toRemove.minus(after as Set<NSObject>)
+		
+		if let toAddAnnotations = toAdd.allObjects as? [MKAnnotation] {
+			mapView.addAnnotations(toAddAnnotations)
+		}
+		
+		if let removeAnnotations = toRemove.allObjects as? [MKAnnotation] {
+			mapView.removeAnnotations(removeAnnotations)
+		}
     }
 }

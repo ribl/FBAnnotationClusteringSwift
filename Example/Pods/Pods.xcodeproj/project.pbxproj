@@ -16,10 +16,13 @@
 		91AEAD945BEB10052826E21CFF26E902 /* Pods-FBAnnotationClusteringSwift_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D238B0636100A49564B5DB9400784E03 /* Pods-FBAnnotationClusteringSwift_Example-dummy.m */; };
 		AE161B097C92AFAECA99DD5F1024DA15 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
 		B176830348EE55ADF7E8B47B773FA745 /* FBClusteringManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00194A32AF9E02D5DA26A0EDF3891EDB /* FBClusteringManager.swift */; };
-		B7DDDE5C548091745279239072B5C794 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65DC6C4B903FF76D703E5FE855F58819 /* Images.xcassets */; };
 		BAF0B0AA67FDA272534E0B9083C23B50 /* FBBoundingBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C63CD9D24BC9DA256C8155049E19300 /* FBBoundingBox.swift */; };
 		CF47B99717C12120B3DC20D9270407EC /* FBAnnotationClusterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77066C8F7C9BCE70217C6CA7ABBBE594 /* FBAnnotationClusterView.swift */; };
 		CFA614DCDDEA8754BCEBBBB8C9495B14 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		E666E2531D95D8B7009926A3 /* FBAnnotationClusterTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E666E2521D95D8B7009926A3 /* FBAnnotationClusterTemplate.swift */; };
+		E666E2551D95D91E009926A3 /* FBAnnotationClusterViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E666E2541D95D91E009926A3 /* FBAnnotationClusterViewConfiguration.swift */; };
+		E666E2571D95E22D009926A3 /* FBBoundingBox+MapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E666E2561D95E22D009926A3 /* FBBoundingBox+MapKit.swift */; };
+		E6AFAE8F1D98A1E9008901AC /* FBZoomLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AFAE8E1D98A1E9008901AC /* FBZoomLevel.swift */; };
 		ECD0E4B84EDEEC6D3A38B3506412A1A6 /* FBAnnotationClusteringSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A65B1A88959B1E635B94977A05108772 /* FBAnnotationClusteringSwift-dummy.m */; };
 /* End PBXBuildFile section */
 
@@ -43,7 +46,6 @@
 		340BCABCEB67018A2D089EF3205E3CC8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		48CB430C72B978FA4DBC9358890144A6 /* Pods-FBAnnotationClusteringSwift_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FBAnnotationClusteringSwift_Example-frameworks.sh"; sourceTree = "<group>"; };
 		4B564FC39529EA199292386903C59D2E /* FBQuadTree.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FBQuadTree.swift; sourceTree = "<group>"; };
-		65DC6C4B903FF76D703E5FE855F58819 /* Images.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		709D097717C93FA87EE974A8D544B11D /* Pods-FBAnnotationClusteringSwift_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FBAnnotationClusteringSwift_Example-resources.sh"; sourceTree = "<group>"; };
 		77066C8F7C9BCE70217C6CA7ABBBE594 /* FBAnnotationClusterView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FBAnnotationClusterView.swift; sourceTree = "<group>"; };
 		7967570F5E9BB537E8BC81094B1AD861 /* Pods_FBAnnotationClusteringSwift_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FBAnnotationClusteringSwift_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -58,6 +60,10 @@
 		CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		D238B0636100A49564B5DB9400784E03 /* Pods-FBAnnotationClusteringSwift_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-FBAnnotationClusteringSwift_Example-dummy.m"; sourceTree = "<group>"; };
 		DD657D8F7C514DE49DCC45BEEA038796 /* FBAnnotationCluster.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FBAnnotationCluster.swift; sourceTree = "<group>"; };
+		E666E2521D95D8B7009926A3 /* FBAnnotationClusterTemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBAnnotationClusterTemplate.swift; sourceTree = "<group>"; };
+		E666E2541D95D91E009926A3 /* FBAnnotationClusterViewConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBAnnotationClusterViewConfiguration.swift; sourceTree = "<group>"; };
+		E666E2561D95E22D009926A3 /* FBBoundingBox+MapKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FBBoundingBox+MapKit.swift"; sourceTree = "<group>"; };
+		E6AFAE8E1D98A1E9008901AC /* FBZoomLevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBZoomLevel.swift; sourceTree = "<group>"; };
 		EA740839EBBDFD6548B9C19CCB9A69F4 /* Pods-FBAnnotationClusteringSwift_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FBAnnotationClusteringSwift_Example.release.xcconfig"; sourceTree = "<group>"; };
 		F808E2191ED4D6C82E639899797072A0 /* Pods-FBAnnotationClusteringSwift_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-FBAnnotationClusteringSwift_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		F931065447D3EDB62BBFE185DAD825C3 /* FBAnnotationClusteringSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = FBAnnotationClusteringSwift.modulemap; sourceTree = "<group>"; };
@@ -117,20 +123,16 @@
 				090B9F61146F8904A801E055A5A2B1EA /* FBAnnotation.swift */,
 				DD657D8F7C514DE49DCC45BEEA038796 /* FBAnnotationCluster.swift */,
 				77066C8F7C9BCE70217C6CA7ABBBE594 /* FBAnnotationClusterView.swift */,
+				E666E2541D95D91E009926A3 /* FBAnnotationClusterViewConfiguration.swift */,
+				E666E2521D95D8B7009926A3 /* FBAnnotationClusterTemplate.swift */,
 				2C63CD9D24BC9DA256C8155049E19300 /* FBBoundingBox.swift */,
+				E666E2561D95E22D009926A3 /* FBBoundingBox+MapKit.swift */,
 				00194A32AF9E02D5DA26A0EDF3891EDB /* FBClusteringManager.swift */,
 				4B564FC39529EA199292386903C59D2E /* FBQuadTree.swift */,
 				7AD551C332F4FBDB5EDAF2DF6D60ECA6 /* FBQuadTreeNode.swift */,
+				E6AFAE8E1D98A1E9008901AC /* FBZoomLevel.swift */,
 			);
 			path = Classes;
-			sourceTree = "<group>";
-		};
-		2EA833301556BCA8562C1AFE51233C89 /* Assets */ = {
-			isa = PBXGroup;
-			children = (
-				65DC6C4B903FF76D703E5FE855F58819 /* Images.xcassets */,
-			);
-			path = Assets;
 			sourceTree = "<group>";
 		};
 		3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */ = {
@@ -182,14 +184,6 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		9F120E393F9121A38E189F7B4A36DD46 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				CDA7560FDE4C1253074708F37129A17D /* Pod */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
 		B127CF8307A8406BC06FB0A849A39F71 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
@@ -206,19 +200,10 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		CDA7560FDE4C1253074708F37129A17D /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				2EA833301556BCA8562C1AFE51233C89 /* Assets */,
-			);
-			path = Pod;
-			sourceTree = "<group>";
-		};
 		E1E18256EDC35A82F71B4F2D94523023 /* FBAnnotationClusteringSwift */ = {
 			isa = PBXGroup;
 			children = (
 				B127CF8307A8406BC06FB0A849A39F71 /* Pod */,
-				9F120E393F9121A38E189F7B4A36DD46 /* Resources */,
 				6B4A55514E1E8E117B352B7DB04154EA /* Support Files */,
 			);
 			name = FBAnnotationClusteringSwift;
@@ -323,7 +308,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B7DDDE5C548091745279239072B5C794 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,10 +319,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				40049509E261ED6788CD2C9D44B798B3 /* FBAnnotation.swift in Sources */,
+				E666E2551D95D91E009926A3 /* FBAnnotationClusterViewConfiguration.swift in Sources */,
 				3A87703D62F0553904151664BAD8B266 /* FBAnnotationCluster.swift in Sources */,
 				ECD0E4B84EDEEC6D3A38B3506412A1A6 /* FBAnnotationClusteringSwift-dummy.m in Sources */,
 				CF47B99717C12120B3DC20D9270407EC /* FBAnnotationClusterView.swift in Sources */,
+				E6AFAE8F1D98A1E9008901AC /* FBZoomLevel.swift in Sources */,
 				BAF0B0AA67FDA272534E0B9083C23B50 /* FBBoundingBox.swift in Sources */,
+				E666E2531D95D8B7009926A3 /* FBAnnotationClusterTemplate.swift in Sources */,
+				E666E2571D95E22D009926A3 /* FBBoundingBox+MapKit.swift in Sources */,
 				B176830348EE55ADF7E8B47B773FA745 /* FBClusteringManager.swift in Sources */,
 				523524D085B4D51C5AE30410785F5CB0 /* FBQuadTree.swift in Sources */,
 				37D65F808353085EAB2719D3DB52013F /* FBQuadTreeNode.swift in Sources */,

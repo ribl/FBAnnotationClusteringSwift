@@ -11,15 +11,11 @@ import MapKit
 
 open class FBAnnotationCluster: NSObject {
     
-    open var coordinate = CLLocationCoordinate2D(latitude: 39.208407, longitude: -76.799555)
-    
-    open var title: String? = "cluster"
-    open var subtitle: String? = nil
+    open var coordinate = CLLocationCoordinate2D()
+    open var title: String?
+    open var subtitle: String?
     
     open var annotations: [MKAnnotation] = []
-    
 }
 
-extension FBAnnotationCluster : MKAnnotation {
-    
-}
+extension FBAnnotationCluster : MKAnnotation { }
