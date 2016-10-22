@@ -138,10 +138,10 @@ After than open the .xworkspace file generated.
 ### Customizing cluster appearance
 Cluster's range and appearance are fully customizable via the FBAnnotationClusterViewConfiguration class. Each range have his own template (FBAnnotationClusterTemplate) allowing each segment to look different. You can create as many templates you like as long the ranges don't overlap each others. Each template can be either displayed as a circle with a solid color and a stroke or as an image.
 
-#### Cusotm Solid Color Template
+#### Custom Solid Color Template
 Just take a look at FBAnnotationClusterViewConfiguration.default() function.
 
-#### Cusotm Image Template
+#### Custom Image Template
 TODO
 
 ### Migration from 1.0
