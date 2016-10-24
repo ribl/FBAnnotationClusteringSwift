@@ -9,98 +9,61 @@
 import Foundation
 import MapKit
 
-open class FBQuadTreeNode: NSObject {
+open class FBQuadTreeNode {
+
+	static let NodeCapacity = 8
     
-    var boundingBox: FBBoundingBox? = nil
-    
-    var northEast: FBQuadTreeNode? = nil
-    var northWest: FBQuadTreeNode? = nil
-    var southEast: FBQuadTreeNode? = nil
-    var southWest: FBQuadTreeNode? = nil
-    
-    var count = 0
-    
-    var annotations: [MKAnnotation] = []
+    let boundingBox: FBBoundingBox
+	private(set) var annotations: [MKAnnotation] = []
+
+    private(set) var northEast: FBQuadTreeNode?
+    private(set) var northWest: FBQuadTreeNode?
+    private(set) var southEast: FBQuadTreeNode?
+    private(set) var southWest: FBQuadTreeNode?
     
     // MARK: - Initializers
-    
-    override init() {
-        super.init()
-    }
-    
+
     init(boundingBox box: FBBoundingBox) {
-        super.init()
-        boundingBox = box
+		boundingBox = box
     }
     
     // MARK: - Instance functions
+
+	func canAppendAnnotation() -> Bool {
+		return annotations.count < FBQuadTreeNode.NodeCapacity
+	}
+
+	func append(annotation: MKAnnotation) -> Bool {
+		if canAppendAnnotation() {
+			annotations.append(annotation)
+			return true
+		}
+		return false
+	}
     
     func isLeaf() -> Bool {
         return (northEast == nil) ? true : false
     }
+
+	func siblings() -> (northEast: FBQuadTreeNode, northWest: FBQuadTreeNode, southEast: FBQuadTreeNode, southWest: FBQuadTreeNode)? {
+		if let northEast = northEast,
+		let northWest = northWest,
+		let southEast = southEast,
+		let southWest = southWest {
+			return (northEast, northWest, southEast, southWest)
+		} else {
+			return nil
+		}
+	}
     
-    func subdivide() {
-        
-        northEast = FBQuadTreeNode()
-        northWest = FBQuadTreeNode()
-        southEast = FBQuadTreeNode()
-        southWest = FBQuadTreeNode()
-        
-        let box = boundingBox!
-        
-        let xMid: CGFloat = (box.xf + box.x0) / 2.0
-        let yMid: CGFloat = (box.yf + box.y0) / 2.0
-        
-        
-        northEast!.boundingBox = FBQuadTreeNode.FBBoundingBoxMake(xMid, y0:box.y0, xf:box.xf, yf:yMid)
-        northWest!.boundingBox = FBQuadTreeNode.FBBoundingBoxMake(box.x0, y0:box.y0, xf:xMid, yf:yMid)
-        southEast!.boundingBox = FBQuadTreeNode.FBBoundingBoxMake(xMid, y0:yMid, xf:box.xf, yf:box.yf)
-        southWest!.boundingBox = FBQuadTreeNode.FBBoundingBoxMake(box.x0, y0:yMid, xf:xMid, yf:box.yf)
-    }
-    
-    // MARK: - Class functions
-    
-    class func FBBoundingBoxMake(_ x0: CGFloat, y0: CGFloat, xf: CGFloat, yf: CGFloat) -> FBBoundingBox {
-        
-        let box = FBBoundingBox(x0: x0, y0: y0, xf: xf, yf: yf)
-        return box
-    }
-    
-    class func FBBoundingBoxContainsCoordinate(_ box: FBBoundingBox, coordinate: CLLocationCoordinate2D) -> Bool {
-        let containsX: Bool = (box.x0 <= CGFloat(coordinate.latitude)) && (CGFloat(coordinate.latitude) <= box.xf)
-        let containsY: Bool = (box.y0 <= CGFloat(coordinate.longitude)) && (CGFloat(coordinate.longitude) <= box.yf)
-        return (containsX && containsY)
-    }
-    
-    class func FBBoundingBoxForMapRect(_ mapRect: MKMapRect) -> FBBoundingBox {
-        let topLeft: CLLocationCoordinate2D = MKCoordinateForMapPoint(mapRect.origin)
-        let botRight: CLLocationCoordinate2D = MKCoordinateForMapPoint(MKMapPointMake(MKMapRectGetMaxX(mapRect), MKMapRectGetMaxY(mapRect)))
-        
-        let minLat: CLLocationDegrees = botRight.latitude
-        let maxLat: CLLocationDegrees = topLeft.latitude
-        
-        let minLon: CLLocationDegrees = topLeft.longitude
-        let maxLon: CLLocationDegrees = botRight.longitude
-        
-        return FBQuadTreeNode.FBBoundingBoxMake(CGFloat(minLat), y0: CGFloat(minLon), xf: CGFloat(maxLat), yf: CGFloat(maxLon))
-    }
-    
-    class func FBBoundingBoxIntersectsBoundingBox(_ box1: FBBoundingBox, box2: FBBoundingBox) -> Bool {
-        return (box1.x0 <= box2.xf && box1.xf >= box2.x0 && box1.y0 <= box2.yf && box1.yf >= box2.y0)
-    }
-    
-    class func FBMapRectForBoundingBox(_ boundingBox: FBBoundingBox) -> MKMapRect {
-        let topLeft: MKMapPoint  = MKMapPointForCoordinate(
-            CLLocationCoordinate2DMake(
-                CLLocationDegrees(boundingBox.x0),
-                CLLocationDegrees(boundingBox.y0)))
-        
-        let botRight: MKMapPoint  = MKMapPointForCoordinate(
-            CLLocationCoordinate2DMake(
-                CLLocationDegrees(boundingBox.xf),
-                CLLocationDegrees(boundingBox.yf)))
-        
-        return MKMapRectMake(topLeft.x, botRight.y, fabs(botRight.x - topLeft.x), fabs(botRight.y - topLeft.y))
+    func createSiblings() -> (northEast: FBQuadTreeNode, northWest: FBQuadTreeNode, southEast: FBQuadTreeNode, southWest: FBQuadTreeNode) {
+		let box = boundingBox
+		northEast = FBQuadTreeNode(boundingBox: FBBoundingBox(x0: box.xMid, y0: box.y0, xf: box.xf, yf: box.yMid))
+        northWest = FBQuadTreeNode(boundingBox: FBBoundingBox(x0: box.x0, y0: box.y0, xf: box.xMid, yf: box.yMid))
+        southEast = FBQuadTreeNode(boundingBox: FBBoundingBox(x0: box.xMid, y0: box.yMid, xf: box.xf, yf: box.yf))
+        southWest = FBQuadTreeNode(boundingBox: FBBoundingBox(x0: box.x0, y0: box.yMid, xf: box.xMid, yf: box.yf))
+
+		return (northEast!, northWest!, southEast!, southWest!)
     }
     
 }

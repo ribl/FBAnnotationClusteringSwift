@@ -12,11 +12,8 @@ import MapKit
 
 open class FBAnnotation: NSObject {
     
-    open var coordinate = CLLocationCoordinate2D(latitude: 39.208407, longitude: -76.799555)
-    open var title: String? = ""
-    
+    open var coordinate = CLLocationCoordinate2D()
+    open var title: String?
 }
 
-extension FBAnnotation : MKAnnotation {
-    
-}
+extension FBAnnotation : MKAnnotation { }

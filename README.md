@@ -27,12 +27,16 @@ import FBAnnotationClusteringSwift
 Copy the following Swift files to your project:
 
 * FBClusteringManager.swift
+* FBAnnotation.swift
 * FBAnnotationCluster.swift
+* FBAnnotationClusterTemplate.swift
 * FBAnnotationClusterView.swift
+* FBAnnotationClusterViewConfiguration.swift
 * FBAnnotation.swift
 * FBQuadTree.swift
 * FBQuadTreeNode.swift
 * FBBoundingBox.swift
+* FBBoundingBox+MapKit.swift
 
 ## Usage
 
@@ -81,37 +85,46 @@ Drop in these MKMapViewDelegate methods:
 ```
 extension ViewController: MKMapViewDelegate {
 
-    func mapView(mapView: MKMapView!, regionDidChangeAnimated animated: Bool){
-        NSOperationQueue().addOperationWithBlock({
-            let mapBoundsWidth = Double(self.mapView.bounds.size.width)
-            let mapRectWidth:Double = self.mapView.visibleMapRect.size.width
-            let scale:Double = mapBoundsWidth / mapRectWidth
-            let annotationArray = self.clusteringManager.clusteredAnnotationsWithinMapRect(self.mapView.visibleMapRect, withZoomScale:scale)
-            self.clusteringManager.displayAnnotations(annotationArray, onMapView:self.mapView)
-        })
-    }
-    
-    func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
-        var reuseId = ""
-        if annotation.isKindOfClass(FBAnnotationCluster) {
-            reuseId = "Cluster"
-            var clusterView = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseId)
-            clusterView = FBAnnotationClusterView(annotation: annotation, reuseIdentifier: reuseId, options: nil)
-            return clusterView
-        } else {
-            reuseId = "Pin"
-            var pinView = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseId) as? MKPinAnnotationView
-            pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
-            pinView!.pinColor = .Green
-            return pinView
-        }
-    }
+	func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+		DispatchQueue.global(qos: .userInitiated).async {
+			let mapBoundsWidth = Double(self.mapView.bounds.size.width)
+			let mapRectWidth = self.mapView.visibleMapRect.size.width
+			let scale = mapBoundsWidth / mapRectWidth
+			
+			let annotationArray = self.clusteringManager.clusteredAnnotations(withinMapRect: self.mapView.visibleMapRect, zoomScale:scale)
+			
+			DispatchQueue.main.async {
+				self.clusteringManager.display(annotations: annotationArray, onMapView:self.mapView)
+			}
+		}
+	}
+
+	func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+		var reuseId = ""
+		if annotation is FBAnnotationCluster {
+			reuseId = "Cluster"
+			var clusterView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId)
+			if clusterView == nil {
+				clusterView = FBAnnotationClusterView(annotation: annotation, reuseIdentifier: reuseId, configuration: FBAnnotationClusterViewConfiguration.default())
+			} else {
+				clusterView?.annotation = annotation
+			}
+			return clusterView
+		} else {
+			reuseId = "Pin"
+			var pinView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId) as? MKPinAnnotationView
+			if pinView == nil {
+				pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+				pinView?.pinTintColor = UIColor.green
+			} else {
+				pinView?.annotation = annotation
+			}
+			return pinView
+		}
+	}
     
 }
 ```
-
-For image's cluster
-You can use those provided by me, or you can pass the name of the image you have in your project. Remember you will need 3 different images depending on the cluster size
 
 ## Run Example
 If you want run example, before to open Xcode the first time,  open Terminal in Example folder and run the command:
@@ -121,3 +134,15 @@ pod  install
 ``` 
 
 After than open the .xworkspace file generated.
+
+### Customizing cluster appearance
+Cluster's range and appearance are fully customizable via the FBAnnotationClusterViewConfiguration class. Each range have his own template (FBAnnotationClusterTemplate) allowing each segment to look different. You can create as many templates you like as long the ranges don't overlap each others. Each template can be either displayed as a circle with a solid color and a stroke or as an image.
+
+#### Custom Solid Color Template
+Just take a look at FBAnnotationClusterViewConfiguration.default() function.
+
+#### Custom Image Template
+TODO
+
+### Migration from 1.0
+TODO

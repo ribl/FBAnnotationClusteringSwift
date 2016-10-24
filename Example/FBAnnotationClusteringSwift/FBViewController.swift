@@ -13,34 +13,26 @@ import FBAnnotationClusteringSwift
 class FBViewController: UIViewController {
 
     @IBOutlet weak var mapView: MKMapView!
-    
+
     let numberOfLocations = 1000
     
     let clusteringManager = FBClusteringManager()
+	let configuration = FBAnnotationClusterViewConfiguration.default()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let array:[MKAnnotation] = randomLocationsWithCount(numberOfLocations)
-        
-        clusteringManager.addAnnotations(array)
+        clusteringManager.add(annotations: randomLocationsWithCount(numberOfLocations))
         clusteringManager.delegate = self;
 
         mapView.centerCoordinate = CLLocationCoordinate2DMake(0, 0);
-        
-        
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Utility
     
     func randomLocationsWithCount(_ count:Int) -> [FBAnnotation] {
         var array:[FBAnnotation] = []
-        for _ in 0...count {
+        for _ in 0...count - 1 {
             let a:FBAnnotation = FBAnnotation()
             a.coordinate = CLLocationCoordinate2D(latitude: drand48() * 40 - 20, longitude: drand48() * 80 - 40 )
             array.append(a)
@@ -52,30 +44,27 @@ class FBViewController: UIViewController {
 
 extension FBViewController : FBClusteringManagerDelegate {
  
-    func cellSizeFactorForCoordinator(_ coordinator:FBClusteringManager) -> CGFloat{
+    func cellSizeFactor(forCoordinator coordinator:FBClusteringManager) -> CGFloat {
         return 1.0
     }
-    
 }
 
 
 extension FBViewController : MKMapViewDelegate {
     
-    func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool){
-        
-        OperationQueue().addOperation({
-        
-            let mapBoundsWidth = Double(self.mapView.bounds.size.width)
-            
-            let mapRectWidth:Double = self.mapView.visibleMapRect.size.width
-            
-            let scale:Double = mapBoundsWidth / mapRectWidth
-            
-            let annotationArray = self.clusteringManager.clusteredAnnotationsWithinMapRect(self.mapView.visibleMapRect, withZoomScale:scale)
-            
-            self.clusteringManager.displayAnnotations(annotationArray, onMapView:self.mapView)
+    func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
 
-        })
+		DispatchQueue.global(qos: .userInitiated).async {
+			let mapBoundsWidth = Double(self.mapView.bounds.size.width)
+			let mapRectWidth = self.mapView.visibleMapRect.size.width
+			let scale = mapBoundsWidth / mapRectWidth
+
+			let annotationArray = self.clusteringManager.clusteredAnnotations(withinMapRect: self.mapView.visibleMapRect, zoomScale:scale)
+
+			DispatchQueue.main.async {
+				self.clusteringManager.display(annotations: annotationArray, onMapView:self.mapView)
+			}
+		}
 
     }
     
@@ -87,7 +76,11 @@ extension FBViewController : MKMapViewDelegate {
             
             reuseId = "Cluster"
             var clusterView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId)
-            clusterView = FBAnnotationClusterView(annotation: annotation, reuseIdentifier: reuseId, options: nil)
+			if clusterView == nil {
+				clusterView = FBAnnotationClusterView(annotation: annotation, reuseIdentifier: reuseId, configuration: self.configuration)
+			} else {
+				clusterView?.annotation = annotation
+			}
 
             return clusterView
             
@@ -95,10 +88,12 @@ extension FBViewController : MKMapViewDelegate {
         
             reuseId = "Pin"
             var pinView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId) as? MKPinAnnotationView
-            pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
-            
-            
-            pinView!.pinTintColor = UIColor.green
+			if pinView == nil {
+				pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+				pinView?.pinTintColor = UIColor.green
+			} else {
+				pinView?.annotation = annotation
+			}
             
             return pinView
         }
