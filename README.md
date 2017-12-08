@@ -65,7 +65,7 @@ pinTwo.coordinate = CLLocationCoordinate2D(latitude: 38.188806, longitude: -85.6
 array.append(pinOne)
 array.append(pinTwo)
 
-clusteringManager.addAnnotations(array)
+clusteringManager.add(annotations: array)
 ```
 
 ### Step 3:  Wire up your map
