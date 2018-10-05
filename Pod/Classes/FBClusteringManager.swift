@@ -74,10 +74,10 @@ public class FBClusteringManager {
 
         let scaleFactor = zoomScale / Double(cellSize)
         
-        let minX = Int(floor(MKMapRectGetMinX(rect) * scaleFactor))
-        let maxX = Int(floor(MKMapRectGetMaxX(rect) * scaleFactor))
-        let minY = Int(floor(MKMapRectGetMinY(rect) * scaleFactor))
-        let maxY = Int(floor(MKMapRectGetMaxY(rect) * scaleFactor))
+        let minX = Int(floor(rect.minX * scaleFactor))
+        let maxX = Int(floor(rect.maxX * scaleFactor))
+        let minY = Int(floor(rect.minY * scaleFactor))
+        let maxY = Int(floor(rect.maxY * scaleFactor))
         
         var clusteredAnnotations = [MKAnnotation]()
         

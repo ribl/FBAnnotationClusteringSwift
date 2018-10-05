@@ -13,7 +13,7 @@ typealias ZoomLevel = Int
 extension ZoomLevel {
 
 	init(scale: MKZoomScale) {
-		let totalTilesAtMaxZoom = MKMapSizeWorld.width / 256.0
+        let totalTilesAtMaxZoom = MKMapSize.world.width / 256.0
 		let zoomLevelAtMaxZoom = Int(log2(totalTilesAtMaxZoom))
 		let floorLog2ScaleFloat = floor(log2f(Float(scale))) + 0.5
 
