@@ -40,7 +40,7 @@ public class FBClusteringManager {
 	public func add(annotations:[MKAnnotation]){
         lock.lock()
         for annotation in annotations {
-			tree?.insert(annotation: annotation)
+			_ = tree?.insert(annotation: annotation)
         }
         lock.unlock()
     }
@@ -68,16 +68,17 @@ public class FBClusteringManager {
         guard !zoomScale.isInfinite else { return [] }
         
         var cellSize = ZoomLevel(MKZoomScale(zoomScale)).cellSize()
-        if let delegate = delegate, delegate.responds(to: Selector("cellSizeFactorForCoordinator:")) {
+
+        if let delegate = delegate {
 			cellSize *= delegate.cellSizeFactor(forCoordinator: self)
         }
 
         let scaleFactor = zoomScale / Double(cellSize)
         
-        let minX = Int(floor(MKMapRectGetMinX(rect) * scaleFactor))
-        let maxX = Int(floor(MKMapRectGetMaxX(rect) * scaleFactor))
-        let minY = Int(floor(MKMapRectGetMinY(rect) * scaleFactor))
-        let maxY = Int(floor(MKMapRectGetMaxY(rect) * scaleFactor))
+        let minX = Int(floor(rect.minX * scaleFactor))
+        let maxX = Int(floor(rect.maxX * scaleFactor))
+        let minY = Int(floor(rect.minY * scaleFactor))
+        let maxY = Int(floor(rect.maxY * scaleFactor))
         
         var clusteredAnnotations = [MKAnnotation]()
         

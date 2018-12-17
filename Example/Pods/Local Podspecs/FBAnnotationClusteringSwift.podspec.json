@@ -1,6 +1,6 @@
 {
   "name": "FBAnnotationClusteringSwift",
-  "version": "1.0.4",
+  "version": "2.0",
   "summary": "This is a Swift translation of FBAnnotationClustering. Aggregates map pins into a single numbered cluster.",
   "description": "Swift translation of FB Annotation Clustering, which clusters pins on the map for iOS. http://ribl.co/blog/2015/05/28/map-clustering-with-swift-how-we-implemented-it-into-the-ribl-ios-app/",
   "homepage": "https://github.com/freemiumdev/FBAnnotationClusteringSwift",
@@ -10,14 +10,16 @@
   },
   "source": {
     "git": "https://github.com/freemiumdev/FBAnnotationClusteringSwift.git",
-    "tag": "1.0.4"
+    "tag": "2.0"
   },
   "platforms": {
     "ios": "8.0"
   },
   "requires_arc": true,
+  "swift_version": "4.2",
   "source_files": "Pod/Classes/**/*",
-  "resources": [
-    "Pod/Assets/*.xcassets"
-  ]
+  "frameworks": "MapKit",
+  "ios": {
+    "frameworks": "UIKit"
+  }
 }

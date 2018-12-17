@@ -12,8 +12,8 @@ import MapKit
 extension FBBoundingBox {
 
 	init(mapRect: MKMapRect) {
-		let topLeft = MKCoordinateForMapPoint(mapRect.origin)
-		let bottomRight = MKCoordinateForMapPoint(MKMapPointMake(MKMapRectGetMaxX(mapRect), MKMapRectGetMaxY(mapRect)))
+		let topLeft = mapRect.origin.coordinate
+        let bottomRight = MKMapPoint(x: mapRect.maxX, y: mapRect.maxY).coordinate
 
 		let minLat = bottomRight.latitude
 		let maxLat = topLeft.latitude
@@ -31,8 +31,8 @@ extension FBBoundingBox {
 	}
 
 	func mapRect() -> MKMapRect {
-		let topLeft  = MKMapPointForCoordinate(CLLocationCoordinate2DMake(CLLocationDegrees(x0), CLLocationDegrees(y0)))
-		let botRight  = MKMapPointForCoordinate(CLLocationCoordinate2DMake(CLLocationDegrees(xf), CLLocationDegrees(yf)))
-		return MKMapRectMake(topLeft.x, botRight.y, fabs(botRight.x - topLeft.x), fabs(botRight.y - topLeft.y))
+        let topLeft  = MKMapPoint(CLLocationCoordinate2DMake(CLLocationDegrees(x0), CLLocationDegrees(y0)))
+        let botRight  = MKMapPoint(CLLocationCoordinate2DMake(CLLocationDegrees(xf), CLLocationDegrees(yf)))
+        return MKMapRect(x: topLeft.x, y: botRight.y, width: fabs(botRight.x - topLeft.x), height: fabs(botRight.y - topLeft.y))
 	}
 }

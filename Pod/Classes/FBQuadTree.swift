@@ -11,7 +11,7 @@ import MapKit
 
 open class FBQuadTree {
     
-    let rootNode = FBQuadTreeNode(boundingBox: FBBoundingBox(mapRect: MKMapRectWorld))
+    let rootNode = FBQuadTreeNode(boundingBox: FBBoundingBox(mapRect: MKMapRect.world))
 
 	// MARK: Internal functions
     
@@ -24,7 +24,7 @@ open class FBQuadTree {
     }
     
     func enumerateAnnotationsUsingBlock(_ callback: (MKAnnotation) -> Void) {
-		enumerateAnnotations(inBox: FBBoundingBox(mapRect: MKMapRectWorld), withNode:rootNode, callback:callback)
+        enumerateAnnotations(inBox: FBBoundingBox(mapRect: MKMapRect.world), withNode:rootNode, callback:callback)
     }
 
 	// MARK: Private functions
