@@ -9,26 +9,36 @@
 /* Begin PBXBuildFile section */
 		0510EDE9778AA7F97A057AB62A8C9F72 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56F2ED3CDAE5D2928456AF5EDDDE4257 /* Foundation.framework */; };
 		14AA3934F7889A7EB499405862DB83F2 /* FBQuadTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98FC017B503C01ED47A4E6600E51232B /* FBQuadTree.swift */; };
+		1527310342D444FFFBC907E7CBA1C456 /* Pods-FBAnnotationClusteringSwift_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F5369BE3D9B82D6516C75EC0B2E0CC8 /* Pods-FBAnnotationClusteringSwift_Tests-dummy.m */; };
 		18F3D9197BDDA4B9E02BF25DA44A120F /* FBAnnotationCluster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D0E5D2AE197673A4765F9165A1FAFC /* FBAnnotationCluster.swift */; };
 		1CB559A88413F15CDEA0E98768539C84 /* FBAnnotationClusteringSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DE7E16724CC1DA18667B9AD4E636CB0F /* FBAnnotationClusteringSwift-dummy.m */; };
 		27D0058D053C6AF46C8885754DE7D541 /* FBAnnotationClusterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8B9DDD78021942FA192B934EFC3188 /* FBAnnotationClusterView.swift */; };
 		2C0598EFF9268D54A07C423E53F14F6D /* FBAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8FD9E8365BC19E7A0DCCB67FDF3D99 /* FBAnnotation.swift */; };
 		31065410AF59F5E879313AC48EFE8F97 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17E061A876F428A8E8C9F0CD173365A7 /* MapKit.framework */; };
 		3591B012DC546860AFDCEDDA77689F21 /* FBClusteringManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AC69909C64EEEE6E231EC0F77BAEF9 /* FBClusteringManager.swift */; };
+		371D0AE9680F0CD72A59491669B113AA /* Pods-FBAnnotationClusteringSwift_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F682CC539C767EFCE0351176316F2FA /* Pods-FBAnnotationClusteringSwift_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		40798488B82E9E56DA14A0E834C9EAE6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56F2ED3CDAE5D2928456AF5EDDDE4257 /* Foundation.framework */; };
 		691F0636AAAA0E4EBC060F80B96338A0 /* FBAnnotationClusteringSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AD1A4252101410AD603D1D878818E0D /* FBAnnotationClusteringSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8530017628D10ED0E1018DFD44048941 /* FBAnnotationClusterTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25861B62473AEFF06BA9B724230E8F57 /* FBAnnotationClusterTemplate.swift */; };
 		922F9F8EDF171C75A8C49FE0F73662E7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56F2ED3CDAE5D2928456AF5EDDDE4257 /* Foundation.framework */; };
 		975ECCFEF2FB60E594D09BE9257CEADE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1899DF19920E20BF9EE667803725971 /* UIKit.framework */; };
-		A63C80C52C2C7925EA44B55356E2D36B /* Pods-FBAnnotationClusteringSwift_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C3AE738A5037049BBDC5B7D00DBBD46F /* Pods-FBAnnotationClusteringSwift_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A63C80C52C2C7925EA44B55356E2D36B /* Pods-FBAnnotationClusteringSwift_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 469B265AB226E786CE6D130DCA20B9D1 /* Pods-FBAnnotationClusteringSwift_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B181D423E4755A7281674805DC0A827F /* FBBoundingBox+MapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F336D50780903BC1F45A6574265B1B0 /* FBBoundingBox+MapKit.swift */; };
 		CC27DC66B7C95F8B3D90DEDE6B4402C8 /* FBBoundingBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359A02E4436A63311F677D5FC3FC65A1 /* FBBoundingBox.swift */; };
-		D4E53A7C40EE962B91243B7EB9F7C51F /* Pods-FBAnnotationClusteringSwift_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DD035E256E57E02D0D69D482A9CD63B8 /* Pods-FBAnnotationClusteringSwift_Example-dummy.m */; };
+		D4E53A7C40EE962B91243B7EB9F7C51F /* Pods-FBAnnotationClusteringSwift_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC1095767751431F1038E706115A1FA /* Pods-FBAnnotationClusteringSwift_Example-dummy.m */; };
 		D9C299D8CCBD2EC5B9443F4357DADCD3 /* FBQuadTreeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AAB5907832490A95B94F1E5FAD69501 /* FBQuadTreeNode.swift */; };
 		E079FC41CA6CE89D932902BD0E03DE90 /* FBZoomLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC25C398556BEA7E44F7D427D5B2AE45 /* FBZoomLevel.swift */; };
 		F46577252AE013F4C5881CD5CD5DF56A /* FBAnnotationClusterViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB055CA4504868D9E3C140D84EFDC8D /* FBAnnotationClusterViewConfiguration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		8917994CCE52BD66389F6D22E99FADE7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D22311FCAF2B23B7199239B484398704;
+			remoteInfo = FBAnnotationClusteringSwift;
+		};
 		9A00CFF15EBD102973B8A9B55E305381 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
@@ -44,37 +54,48 @@
 		0C1C3E055B1A72B09870F305BB3EC615 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		0C1FA18DFBAA1264D30516D28325B255 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17E061A876F428A8E8C9F0CD173365A7 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/MapKit.framework; sourceTree = DEVELOPER_DIR; };
-		19972467EB88DE5CA97907D0B86E351D /* FBAnnotationClusteringSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FBAnnotationClusteringSwift.framework; path = FBAnnotationClusteringSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		19EF4B16D5C68CBEB824E0EDF22488BF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		206423E3BD97F549610A94ECAEA85C01 /* Pods-FBAnnotationClusteringSwift_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FBAnnotationClusteringSwift_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		25861B62473AEFF06BA9B724230E8F57 /* FBAnnotationClusterTemplate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FBAnnotationClusterTemplate.swift; path = Pod/Classes/FBAnnotationClusterTemplate.swift; sourceTree = "<group>"; };
+		26F6A749A8AFE2D4FC17E931D23900EC /* Pods-FBAnnotationClusteringSwift_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FBAnnotationClusteringSwift_Tests-resources.sh"; sourceTree = "<group>"; };
 		27BA81269E8216B2CD3D95218D31ADC4 /* FBAnnotationClusteringSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FBAnnotationClusteringSwift-prefix.pch"; sourceTree = "<group>"; };
 		2D7616F5A90D2D5060FCF0E917F16E90 /* FBAnnotationClusteringSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = FBAnnotationClusteringSwift.modulemap; sourceTree = "<group>"; };
+		2F5369BE3D9B82D6516C75EC0B2E0CC8 /* Pods-FBAnnotationClusteringSwift_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-FBAnnotationClusteringSwift_Tests-dummy.m"; sourceTree = "<group>"; };
 		359A02E4436A63311F677D5FC3FC65A1 /* FBBoundingBox.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FBBoundingBox.swift; path = Pod/Classes/FBBoundingBox.swift; sourceTree = "<group>"; };
+		3A254A4FEF8706D59426424FEBE91098 /* FBAnnotationClusteringSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FBAnnotationClusteringSwift.framework; path = FBAnnotationClusteringSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A9DCEB01470C1DABE907E68A7BCBE42 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3B47B7CC2559CB75F0FC36EBCA0383D8 /* Pods-FBAnnotationClusteringSwift_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FBAnnotationClusteringSwift_Example.release.xcconfig"; sourceTree = "<group>"; };
+		469B265AB226E786CE6D130DCA20B9D1 /* Pods-FBAnnotationClusteringSwift_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-FBAnnotationClusteringSwift_Example-umbrella.h"; sourceTree = "<group>"; };
+		51F74EB1A2BBCD88914E05E7F5665B9E /* Pods-FBAnnotationClusteringSwift_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FBAnnotationClusteringSwift_Example-frameworks.sh"; sourceTree = "<group>"; };
 		56F2ED3CDAE5D2928456AF5EDDDE4257 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		62415E132FC0CF5CA846DE52C75F0A59 /* Pods-FBAnnotationClusteringSwift_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FBAnnotationClusteringSwift_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		62CD5FD9FF6054AFF5B39E9B88A8A79E /* Pods-FBAnnotationClusteringSwift_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FBAnnotationClusteringSwift_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		66D0E5D2AE197673A4765F9165A1FAFC /* FBAnnotationCluster.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FBAnnotationCluster.swift; path = Pod/Classes/FBAnnotationCluster.swift; sourceTree = "<group>"; };
 		6EB055CA4504868D9E3C140D84EFDC8D /* FBAnnotationClusterViewConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FBAnnotationClusterViewConfiguration.swift; path = Pod/Classes/FBAnnotationClusterViewConfiguration.swift; sourceTree = "<group>"; };
-		6FC5C0892468CBAB5E17CDF3F6345554 /* Pods-FBAnnotationClusteringSwift_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-FBAnnotationClusteringSwift_Example.modulemap"; sourceTree = "<group>"; };
-		7967570F5E9BB537E8BC81094B1AD861 /* Pods_FBAnnotationClusteringSwift_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_FBAnnotationClusteringSwift_Example.framework; path = "Pods-FBAnnotationClusteringSwift_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8087EE15B78DFA7F704DBA56DBC241FA /* Pods-FBAnnotationClusteringSwift_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FBAnnotationClusteringSwift_Example-frameworks.sh"; sourceTree = "<group>"; };
-		81DF3F121FCFA76118E286D55EA49AAC /* Pods-FBAnnotationClusteringSwift_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FBAnnotationClusteringSwift_Example-resources.sh"; sourceTree = "<group>"; };
+		7D5029BAF70407B642F88AE9AEB331C8 /* Pods-FBAnnotationClusteringSwift_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-FBAnnotationClusteringSwift_Example.modulemap"; sourceTree = "<group>"; };
+		7F682CC539C767EFCE0351176316F2FA /* Pods-FBAnnotationClusteringSwift_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-FBAnnotationClusteringSwift_Tests-umbrella.h"; sourceTree = "<group>"; };
+		895C34BA8D537FBF6C53F2D289FD1D62 /* Pods-FBAnnotationClusteringSwift_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-FBAnnotationClusteringSwift_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		899562EDEF23D9B229659171DCD95CEA /* Pods_FBAnnotationClusteringSwift_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_FBAnnotationClusteringSwift_Example.framework; path = "Pods-FBAnnotationClusteringSwift_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8ADA20BF1C178A75A42DA714B86138CB /* Pods-FBAnnotationClusteringSwift_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FBAnnotationClusteringSwift_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		8F336D50780903BC1F45A6574265B1B0 /* FBBoundingBox+MapKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "FBBoundingBox+MapKit.swift"; path = "Pod/Classes/FBBoundingBox+MapKit.swift"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9692D5AE497D49FC532FB911FCD670FB /* Pods-FBAnnotationClusteringSwift_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FBAnnotationClusteringSwift_Example.release.xcconfig"; sourceTree = "<group>"; };
+		95C62DA6AFBA5D82CC2299C594CD1D81 /* Pods-FBAnnotationClusteringSwift_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FBAnnotationClusteringSwift_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		98FC017B503C01ED47A4E6600E51232B /* FBQuadTree.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FBQuadTree.swift; path = Pod/Classes/FBQuadTree.swift; sourceTree = "<group>"; };
 		9AAB5907832490A95B94F1E5FAD69501 /* FBQuadTreeNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FBQuadTreeNode.swift; path = Pod/Classes/FBQuadTreeNode.swift; sourceTree = "<group>"; };
 		9F8FD9E8365BC19E7A0DCCB67FDF3D99 /* FBAnnotation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FBAnnotation.swift; path = Pod/Classes/FBAnnotation.swift; sourceTree = "<group>"; };
+		A91BE2A4B088AB8262A6AD781BC28133 /* Pods_FBAnnotationClusteringSwift_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_FBAnnotationClusteringSwift_Tests.framework; path = "Pods-FBAnnotationClusteringSwift_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B185F54BCF04BF1D17458DF483638CFE /* Pods-FBAnnotationClusteringSwift_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-FBAnnotationClusteringSwift_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		BC25C398556BEA7E44F7D427D5B2AE45 /* FBZoomLevel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FBZoomLevel.swift; path = Pod/Classes/FBZoomLevel.swift; sourceTree = "<group>"; };
-		C3AE738A5037049BBDC5B7D00DBBD46F /* Pods-FBAnnotationClusteringSwift_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-FBAnnotationClusteringSwift_Example-umbrella.h"; sourceTree = "<group>"; };
+		BC3B5997BD49C758FB98E2473FE733B9 /* Pods-FBAnnotationClusteringSwift_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FBAnnotationClusteringSwift_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		C44D23ACA08D306810B4734E879DE15C /* FBAnnotationClusteringSwift.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = FBAnnotationClusteringSwift.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		C5F48BB642E9A587916C3B1239CF7B4C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		CC1C0C9502BBD47E2C7308412C6179EA /* FBAnnotationClusteringSwift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FBAnnotationClusteringSwift.xcconfig; sourceTree = "<group>"; };
+		CEE917AC6AFE7835F95A361D1CD6A0DE /* Pods-FBAnnotationClusteringSwift_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FBAnnotationClusteringSwift_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		D1899DF19920E20BF9EE667803725971 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		D6AC69909C64EEEE6E231EC0F77BAEF9 /* FBClusteringManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FBClusteringManager.swift; path = Pod/Classes/FBClusteringManager.swift; sourceTree = "<group>"; };
-		DCAEB2F8AB8EE7E0147E590DD6F69A47 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DD035E256E57E02D0D69D482A9CD63B8 /* Pods-FBAnnotationClusteringSwift_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-FBAnnotationClusteringSwift_Example-dummy.m"; sourceTree = "<group>"; };
+		DAA82610BC7BE8E261B2B1F04AFB74B2 /* Pods-FBAnnotationClusteringSwift_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FBAnnotationClusteringSwift_Example-resources.sh"; sourceTree = "<group>"; };
 		DE7E16724CC1DA18667B9AD4E636CB0F /* FBAnnotationClusteringSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FBAnnotationClusteringSwift-dummy.m"; sourceTree = "<group>"; };
-		F9DAD62D834CCC7A99176C994C38FA39 /* Pods-FBAnnotationClusteringSwift_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-FBAnnotationClusteringSwift_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		E5E6871AC14EBD3A97241EB825604138 /* Pods-FBAnnotationClusteringSwift_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-FBAnnotationClusteringSwift_Tests.modulemap"; sourceTree = "<group>"; };
+		ECC1095767751431F1038E706115A1FA /* Pods-FBAnnotationClusteringSwift_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-FBAnnotationClusteringSwift_Example-dummy.m"; sourceTree = "<group>"; };
+		EE31829035ECFE0B06D6DCBF6EBE03EE /* Pods-FBAnnotationClusteringSwift_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FBAnnotationClusteringSwift_Tests-frameworks.sh"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +104,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				0510EDE9778AA7F97A057AB62A8C9F72 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D6289CDE2CA158FBA07170AB75996F9B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40798488B82E9E56DA14A0E834C9EAE6 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,15 +146,6 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		2AE7B9599A91DD648B61F4FF912CD480 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				19972467EB88DE5CA97907D0B86E351D /* FBAnnotationClusteringSwift.framework */,
-				7967570F5E9BB537E8BC81094B1AD861 /* Pods_FBAnnotationClusteringSwift_Example.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		2EA84517822B8F089F62EE7F1F81994A /* Pod */ = {
 			isa = PBXGroup;
 			children = (
@@ -136,23 +156,70 @@
 			name = Pod;
 			sourceTree = "<group>";
 		};
+		32438D28BCEAB6860B85627483035CBC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3A254A4FEF8706D59426424FEBE91098 /* FBAnnotationClusteringSwift.framework */,
+				899562EDEF23D9B229659171DCD95CEA /* Pods_FBAnnotationClusteringSwift_Example.framework */,
+				A91BE2A4B088AB8262A6AD781BC28133 /* Pods_FBAnnotationClusteringSwift_Tests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3EF0B2D50A65CABF8D33EA18F34437B1 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				8BE5505E64D6A8DB319880B19AD6B98B /* Pods-FBAnnotationClusteringSwift_Example */,
+				49817FB974B9A5DD14C1DA7179C749B6 /* Pods-FBAnnotationClusteringSwift_Tests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		49817FB974B9A5DD14C1DA7179C749B6 /* Pods-FBAnnotationClusteringSwift_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				19EF4B16D5C68CBEB824E0EDF22488BF /* Info.plist */,
+				E5E6871AC14EBD3A97241EB825604138 /* Pods-FBAnnotationClusteringSwift_Tests.modulemap */,
+				895C34BA8D537FBF6C53F2D289FD1D62 /* Pods-FBAnnotationClusteringSwift_Tests-acknowledgements.markdown */,
+				BC3B5997BD49C758FB98E2473FE733B9 /* Pods-FBAnnotationClusteringSwift_Tests-acknowledgements.plist */,
+				2F5369BE3D9B82D6516C75EC0B2E0CC8 /* Pods-FBAnnotationClusteringSwift_Tests-dummy.m */,
+				EE31829035ECFE0B06D6DCBF6EBE03EE /* Pods-FBAnnotationClusteringSwift_Tests-frameworks.sh */,
+				26F6A749A8AFE2D4FC17E931D23900EC /* Pods-FBAnnotationClusteringSwift_Tests-resources.sh */,
+				7F682CC539C767EFCE0351176316F2FA /* Pods-FBAnnotationClusteringSwift_Tests-umbrella.h */,
+				95C62DA6AFBA5D82CC2299C594CD1D81 /* Pods-FBAnnotationClusteringSwift_Tests.debug.xcconfig */,
+				CEE917AC6AFE7835F95A361D1CD6A0DE /* Pods-FBAnnotationClusteringSwift_Tests.release.xcconfig */,
+			);
+			name = "Pods-FBAnnotationClusteringSwift_Tests";
+			path = "Target Support Files/Pods-FBAnnotationClusteringSwift_Tests";
+			sourceTree = "<group>";
+		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				FDAB7F53BA133EE3462083CABC78C917 /* Development Pods */,
 				122DA2E5084A4393C29BE363C764795C /* Frameworks */,
-				2AE7B9599A91DD648B61F4FF912CD480 /* Products */,
-				90BF3C15CC79C5A873300FA5A84AA6CB /* Targets Support Files */,
+				32438D28BCEAB6860B85627483035CBC /* Products */,
+				3EF0B2D50A65CABF8D33EA18F34437B1 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		90BF3C15CC79C5A873300FA5A84AA6CB /* Targets Support Files */ = {
+		8BE5505E64D6A8DB319880B19AD6B98B /* Pods-FBAnnotationClusteringSwift_Example */ = {
 			isa = PBXGroup;
 			children = (
-				D9D725A239A348D1DF819296FF74D96B /* Pods-FBAnnotationClusteringSwift_Example */,
+				3A9DCEB01470C1DABE907E68A7BCBE42 /* Info.plist */,
+				7D5029BAF70407B642F88AE9AEB331C8 /* Pods-FBAnnotationClusteringSwift_Example.modulemap */,
+				B185F54BCF04BF1D17458DF483638CFE /* Pods-FBAnnotationClusteringSwift_Example-acknowledgements.markdown */,
+				206423E3BD97F549610A94ECAEA85C01 /* Pods-FBAnnotationClusteringSwift_Example-acknowledgements.plist */,
+				ECC1095767751431F1038E706115A1FA /* Pods-FBAnnotationClusteringSwift_Example-dummy.m */,
+				51F74EB1A2BBCD88914E05E7F5665B9E /* Pods-FBAnnotationClusteringSwift_Example-frameworks.sh */,
+				DAA82610BC7BE8E261B2B1F04AFB74B2 /* Pods-FBAnnotationClusteringSwift_Example-resources.sh */,
+				469B265AB226E786CE6D130DCA20B9D1 /* Pods-FBAnnotationClusteringSwift_Example-umbrella.h */,
+				8ADA20BF1C178A75A42DA714B86138CB /* Pods-FBAnnotationClusteringSwift_Example.debug.xcconfig */,
+				3B47B7CC2559CB75F0FC36EBCA0383D8 /* Pods-FBAnnotationClusteringSwift_Example.release.xcconfig */,
 			);
-			name = "Targets Support Files";
+			name = "Pods-FBAnnotationClusteringSwift_Example";
+			path = "Target Support Files/Pods-FBAnnotationClusteringSwift_Example";
 			sourceTree = "<group>";
 		};
 		B02A39E5FFE67DC37E1CEEC53C73CB0F /* Support Files */ = {
@@ -190,24 +257,6 @@
 			path = ../..;
 			sourceTree = "<group>";
 		};
-		D9D725A239A348D1DF819296FF74D96B /* Pods-FBAnnotationClusteringSwift_Example */ = {
-			isa = PBXGroup;
-			children = (
-				DCAEB2F8AB8EE7E0147E590DD6F69A47 /* Info.plist */,
-				6FC5C0892468CBAB5E17CDF3F6345554 /* Pods-FBAnnotationClusteringSwift_Example.modulemap */,
-				F9DAD62D834CCC7A99176C994C38FA39 /* Pods-FBAnnotationClusteringSwift_Example-acknowledgements.markdown */,
-				62415E132FC0CF5CA846DE52C75F0A59 /* Pods-FBAnnotationClusteringSwift_Example-acknowledgements.plist */,
-				DD035E256E57E02D0D69D482A9CD63B8 /* Pods-FBAnnotationClusteringSwift_Example-dummy.m */,
-				8087EE15B78DFA7F704DBA56DBC241FA /* Pods-FBAnnotationClusteringSwift_Example-frameworks.sh */,
-				81DF3F121FCFA76118E286D55EA49AAC /* Pods-FBAnnotationClusteringSwift_Example-resources.sh */,
-				C3AE738A5037049BBDC5B7D00DBBD46F /* Pods-FBAnnotationClusteringSwift_Example-umbrella.h */,
-				62CD5FD9FF6054AFF5B39E9B88A8A79E /* Pods-FBAnnotationClusteringSwift_Example.debug.xcconfig */,
-				9692D5AE497D49FC532FB911FCD670FB /* Pods-FBAnnotationClusteringSwift_Example.release.xcconfig */,
-			);
-			name = "Pods-FBAnnotationClusteringSwift_Example";
-			path = "Target Support Files/Pods-FBAnnotationClusteringSwift_Example";
-			sourceTree = "<group>";
-		};
 		FDAB7F53BA133EE3462083CABC78C917 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -235,9 +284,36 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A45FB424E1187610A6FBD16ADA0529CA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				371D0AE9680F0CD72A59491669B113AA /* Pods-FBAnnotationClusteringSwift_Tests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		4148E137A3BFF99EDDD9CF2CE6F08405 /* Pods-FBAnnotationClusteringSwift_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BC2EDB9BEFD9D8DE0B189F615F985A52 /* Build configuration list for PBXNativeTarget "Pods-FBAnnotationClusteringSwift_Tests" */;
+			buildPhases = (
+				A45FB424E1187610A6FBD16ADA0529CA /* Headers */,
+				398B3ECC5BD6FC23D94B09C7C8E5C69F /* Sources */,
+				D6289CDE2CA158FBA07170AB75996F9B /* Frameworks */,
+				9490D1454481DB052F8967AF9CBE9182 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B97C6FB30F343459DD95B491AACD9D8B /* PBXTargetDependency */,
+			);
+			name = "Pods-FBAnnotationClusteringSwift_Tests";
+			productName = "Pods-FBAnnotationClusteringSwift_Tests";
+			productReference = A91BE2A4B088AB8262A6AD781BC28133 /* Pods_FBAnnotationClusteringSwift_Tests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		D22311FCAF2B23B7199239B484398704 /* FBAnnotationClusteringSwift */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F65F624219B2F33EC3D0FBF4042A1A54 /* Build configuration list for PBXNativeTarget "FBAnnotationClusteringSwift" */;
@@ -253,7 +329,7 @@
 			);
 			name = FBAnnotationClusteringSwift;
 			productName = FBAnnotationClusteringSwift;
-			productReference = 19972467EB88DE5CA97907D0B86E351D /* FBAnnotationClusteringSwift.framework */;
+			productReference = 3A254A4FEF8706D59426424FEBE91098 /* FBAnnotationClusteringSwift.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		F351F308F331921DA49735CCCD578D75 /* Pods-FBAnnotationClusteringSwift_Example */ = {
@@ -272,7 +348,7 @@
 			);
 			name = "Pods-FBAnnotationClusteringSwift_Example";
 			productName = "Pods-FBAnnotationClusteringSwift_Example";
-			productReference = 7967570F5E9BB537E8BC81094B1AD861 /* Pods_FBAnnotationClusteringSwift_Example.framework */;
+			productReference = 899562EDEF23D9B229659171DCD95CEA /* Pods_FBAnnotationClusteringSwift_Example.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -292,18 +368,26 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 2AE7B9599A91DD648B61F4FF912CD480 /* Products */;
+			productRefGroup = 32438D28BCEAB6860B85627483035CBC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				D22311FCAF2B23B7199239B484398704 /* FBAnnotationClusteringSwift */,
 				F351F308F331921DA49735CCCD578D75 /* Pods-FBAnnotationClusteringSwift_Example */,
+				4148E137A3BFF99EDDD9CF2CE6F08405 /* Pods-FBAnnotationClusteringSwift_Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		81FFC0D8B0D3711EBA5C014C567D3402 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9490D1454481DB052F8967AF9CBE9182 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -320,6 +404,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		398B3ECC5BD6FC23D94B09C7C8E5C69F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1527310342D444FFFBC907E7CBA1C456 /* Pods-FBAnnotationClusteringSwift_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		78DE7B18CBB7244E313D135EBB563BED /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -356,10 +448,117 @@
 			target = D22311FCAF2B23B7199239B484398704 /* FBAnnotationClusteringSwift */;
 			targetProxy = 9A00CFF15EBD102973B8A9B55E305381 /* PBXContainerItemProxy */;
 		};
+		B97C6FB30F343459DD95B491AACD9D8B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FBAnnotationClusteringSwift;
+			target = D22311FCAF2B23B7199239B484398704 /* FBAnnotationClusteringSwift */;
+			targetProxy = 8917994CCE52BD66389F6D22E99FADE7 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		5DE19CECB206ACCCACF04D62F93FFDA6 /* Release */ = {
+		10C4AE6D843B49A4F2C1056B2D3859D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CEE917AC6AFE7835F95A361D1CD6A0DE /* Pods-FBAnnotationClusteringSwift_Tests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-FBAnnotationClusteringSwift_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-FBAnnotationClusteringSwift_Tests/Pods-FBAnnotationClusteringSwift_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		233FDF9272F56E0FD62A3BEBA7F46480 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B47B7CC2559CB75F0FC36EBCA0383D8 /* Pods-FBAnnotationClusteringSwift_Example.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-FBAnnotationClusteringSwift_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-FBAnnotationClusteringSwift_Example/Pods-FBAnnotationClusteringSwift_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		5F6C271F9BA3EEBC1A991A18BC855CF1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 95C62DA6AFBA5D82CC2299C594CD1D81 /* Pods-FBAnnotationClusteringSwift_Tests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-FBAnnotationClusteringSwift_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-FBAnnotationClusteringSwift_Tests/Pods-FBAnnotationClusteringSwift_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		85B95B1234E227C814CCC2C7902D0916 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -409,7 +608,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -421,11 +620,10 @@
 			};
 			name = Release;
 		};
-		82E3A9BB41F4AB2FB8CDC2F77BF60436 /* Debug */ = {
+		9DCB8FC04185B903F0B0E647A57049C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 62CD5FD9FF6054AFF5B39E9B88A8A79E /* Pods-FBAnnotationClusteringSwift_Example.debug.xcconfig */;
+			baseConfigurationReference = CC1C0C9502BBD47E2C7308412C6179EA /* FBAnnotationClusteringSwift.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -435,26 +633,26 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-FBAnnotationClusteringSwift_Example/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/FBAnnotationClusteringSwift/FBAnnotationClusteringSwift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FBAnnotationClusteringSwift/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-FBAnnotationClusteringSwift_Example/Pods-FBAnnotationClusteringSwift_Example.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				MODULEMAP_FILE = "Target Support Files/FBAnnotationClusteringSwift/FBAnnotationClusteringSwift.modulemap";
+				PRODUCT_MODULE_NAME = FBAnnotationClusteringSwift;
+				PRODUCT_NAME = FBAnnotationClusteringSwift;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
-		858D01EEFE984249A9581D18DBEA53F1 /* Debug */ = {
+		A73625DEBD810B78234FA1958C191C8C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -507,7 +705,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -519,38 +717,6 @@
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
-		};
-		9DCB8FC04185B903F0B0E647A57049C7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = CC1C0C9502BBD47E2C7308412C6179EA /* FBAnnotationClusteringSwift.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/FBAnnotationClusteringSwift/FBAnnotationClusteringSwift-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/FBAnnotationClusteringSwift/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/FBAnnotationClusteringSwift/FBAnnotationClusteringSwift.modulemap";
-				PRODUCT_MODULE_NAME = FBAnnotationClusteringSwift;
-				PRODUCT_NAME = FBAnnotationClusteringSwift;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
 		};
 		C0FD015266278FCD48D388B4B66EDC76 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -583,9 +749,9 @@
 			};
 			name = Debug;
 		};
-		F840A0BADCE8778111D0EA6C7C5C0257 /* Release */ = {
+		E30CCB4DF9FA54FC839F76A8AEAF92DE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9692D5AE497D49FC532FB911FCD670FB /* Pods-FBAnnotationClusteringSwift_Example.release.xcconfig */;
+			baseConfigurationReference = 8ADA20BF1C178A75A42DA714B86138CB /* Pods-FBAnnotationClusteringSwift_Example.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -599,7 +765,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-FBAnnotationClusteringSwift_Example/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-FBAnnotationClusteringSwift_Example/Pods-FBAnnotationClusteringSwift_Example.modulemap";
@@ -611,11 +777,10 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
 /* End XCBuildConfiguration section */
 
@@ -623,8 +788,8 @@
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				858D01EEFE984249A9581D18DBEA53F1 /* Debug */,
-				5DE19CECB206ACCCACF04D62F93FFDA6 /* Release */,
+				A73625DEBD810B78234FA1958C191C8C /* Debug */,
+				85B95B1234E227C814CCC2C7902D0916 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -632,8 +797,17 @@
 		B350050419D3D4349F6195559F73C782 /* Build configuration list for PBXNativeTarget "Pods-FBAnnotationClusteringSwift_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				82E3A9BB41F4AB2FB8CDC2F77BF60436 /* Debug */,
-				F840A0BADCE8778111D0EA6C7C5C0257 /* Release */,
+				E30CCB4DF9FA54FC839F76A8AEAF92DE /* Debug */,
+				233FDF9272F56E0FD62A3BEBA7F46480 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BC2EDB9BEFD9D8DE0B189F615F985A52 /* Build configuration list for PBXNativeTarget "Pods-FBAnnotationClusteringSwift_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5F6C271F9BA3EEBC1A991A18BC855CF1 /* Debug */,
+				10C4AE6D843B49A4F2C1056B2D3859D0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
