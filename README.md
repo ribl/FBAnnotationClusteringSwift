@@ -10,19 +10,19 @@ Map clustering is a common enough map feature in modern apps.  When I couldn't f
 
 ## Installation
 
-####CocoaPods
-```
+#### CocoaPods
+```console
 pod 'FBAnnotationClusteringSwift'
 ```
 and in class where do you need add this
 
-```
+```console
 import FBAnnotationClusteringSwift
 ```
 
 
 
-####Manually
+#### Manually
 
 Copy the following Swift files to your project:
 
@@ -46,13 +46,13 @@ Follow instructions below for a barely-working implementation.
 
 ### Step 1:  Get a handle to the clustering manager
 
-```
+```swift
 let clusteringManager = FBClusteringManager()
 ```
 
 ### Step 2:  Feed pins into the clustering manager
 
-```
+```swift
 var array:[FBAnnotation] = []
 
 // drop two arbitrary pins somewhere near Louisville, Kentucky
@@ -65,14 +65,14 @@ pinTwo.coordinate = CLLocationCoordinate2D(latitude: 38.188806, longitude: -85.6
 array.append(pinOne)
 array.append(pinTwo)
 
-clusteringManager.addAnnotations(array)
+clusteringManager.add(annotations: array)
 ```
 
 ### Step 3:  Wire up your map
 
 Add this to the top of your ViewController:
 
-```
+```swift
 import MapKit
 ```
 
@@ -82,7 +82,7 @@ Add a MapKit View in the Storyboard, and set the delegate.
 
 Drop in these MKMapViewDelegate methods:
 
-```
+```swift
 extension ViewController: MKMapViewDelegate {
 
 	func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
@@ -129,7 +129,7 @@ extension ViewController: MKMapViewDelegate {
 ## Run Example
 If you want run example, before to open Xcode the first time,  open Terminal in Example folder and run the command:
 
-```
+```console
 pod  install
 ``` 
 
