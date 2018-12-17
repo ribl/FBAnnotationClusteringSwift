@@ -59,10 +59,9 @@ extension FBViewController : MKMapViewDelegate {
 		DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             guard let strongSelf = self else { return }
             let annotationArray = strongSelf.clusteringManager.clusteredAnnotations(withinMapRect: mapVisibleRect, zoomScale:scale)
-            DispatchQueue.main.async {
-                if let strongSelf = self {
-                    strongSelf.clusteringManager.display(annotations: annotationArray, onMapView:strongSelf.mapView)
-                }
+            DispatchQueue.main.async { [weak self] in
+                guard let strongSelf = self else { return }
+                strongSelf.clusteringManager.display(annotations: annotationArray, onMapView:strongSelf.mapView)
             }
 		}
     }
