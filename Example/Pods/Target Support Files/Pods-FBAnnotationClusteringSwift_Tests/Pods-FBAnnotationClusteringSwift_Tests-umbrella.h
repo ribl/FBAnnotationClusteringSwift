@@ -10,3 +10,7 @@
 #endif
 #endif
 
+
+FOUNDATION_EXPORT double Pods_FBAnnotationClusteringSwift_TestsVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_FBAnnotationClusteringSwift_TestsVersionString[];
+

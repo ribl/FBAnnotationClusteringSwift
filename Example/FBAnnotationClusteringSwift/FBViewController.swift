@@ -53,27 +53,22 @@ extension FBViewController : FBClusteringManagerDelegate {
 extension FBViewController : MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
-
-		DispatchQueue.global(qos: .userInitiated).async {
-			let mapBoundsWidth = Double(self.mapView.bounds.size.width)
-			let mapRectWidth = self.mapView.visibleMapRect.size.width
-			let scale = mapBoundsWidth / mapRectWidth
-
-			let annotationArray = self.clusteringManager.clusteredAnnotations(withinMapRect: self.mapView.visibleMapRect, zoomScale:scale)
-
-			DispatchQueue.main.async {
-				self.clusteringManager.display(annotations: annotationArray, onMapView:self.mapView)
-			}
+        let mapBoundsWidth = Double(self.mapView.bounds.size.width)
+        let mapVisibleRect = self.mapView.visibleMapRect
+        let scale = mapBoundsWidth / mapVisibleRect.size.width
+		DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            guard let strongSelf = self else { return }
+            let annotationArray = strongSelf.clusteringManager.clusteredAnnotations(withinMapRect: mapVisibleRect, zoomScale:scale)
+            DispatchQueue.main.async { [weak self] in
+                guard let strongSelf = self else { return }
+                strongSelf.clusteringManager.display(annotations: annotationArray, onMapView:strongSelf.mapView)
+            }
 		}
-
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        
         var reuseId = ""
-        
         if annotation is FBAnnotationCluster {
-            
             reuseId = "Cluster"
             var clusterView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId)
 			if clusterView == nil {
@@ -83,9 +78,7 @@ extension FBViewController : MKMapViewDelegate {
 			}
 
             return clusterView
-            
         } else {
-        
             reuseId = "Pin"
             var pinView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId) as? MKPinAnnotationView
 			if pinView == nil {
@@ -97,7 +90,5 @@ extension FBViewController : MKMapViewDelegate {
             
             return pinView
         }
-        
     }
-    
 }

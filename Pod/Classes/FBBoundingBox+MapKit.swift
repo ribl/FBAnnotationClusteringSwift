@@ -13,7 +13,7 @@ extension FBBoundingBox {
 
 	init(mapRect: MKMapRect) {
 		let topLeft = mapRect.origin.coordinate
-		let bottomRight = MKMapPoint.init(x: mapRect.maxX, y: mapRect.maxY).coordinate
+        let bottomRight = MKMapPoint(x: mapRect.maxX, y: mapRect.maxY).coordinate
 
 		let minLat = bottomRight.latitude
 		let maxLat = topLeft.latitude
